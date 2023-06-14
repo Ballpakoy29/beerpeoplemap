@@ -35,7 +35,7 @@ export default function card(props) {
   };
 
   return (
-    <Card sx={{ maxWidth: '20vw', border: '4px solid black' }}>
+    <Card sx={{ maxWidth: '100%', border: '4px solid black' }}>
       <CardHeader
         // avatar={
         //   <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
