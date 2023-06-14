@@ -80,55 +80,73 @@ export default function MainPage() {
         </Tabs>
       </Box>
       <CssBaseline />
-      <Box sx={{ minHeight: 'calc(100vh - 48px)', display: 'flex', flexDirection: 'column' }}>
-        {mapMode === 1 ? (
-          <MapMode1 />
-        ) : (
-          <Box sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
-            <Box sx={{ p: 2 }}>
-              <Autocomplete
-                options={Data}
-                getOptionLabel={(option) => option.Brand}
-                renderInput={(params) => (
-                  <TextField {...params} label="แบรนด์" variant="outlined" />
-                )}
-              />
-            </Box>
-            <Box sx={{ p: 2 }}>
-              <Autocomplete
-                options={uniqueOptions}
-                getOptionLabel={(option) => option.Origin}
-                renderInput={(params) => (
-                  <TextField {...params} label="จังหวัด" variant="outlined" />
-                )}
-              />
-            </Box>
-            <Box sx={{ p: 2, flexGrow: 1, overflow: 'auto' }}>
-              {Data.map((data, index) => (
-                <CardBrand
-                  key={index}
-                  Brand={data.Brand}
-                  Origin={data.Origin}
-                  Products={data.Products}
-                  ContactNumber={data.ContactNumber}
-                  Page={data.Page}
-                  sx={{ width: '100%', marginBottom: '10px' }}
+      <Container component="main" maxWidth="xs"> {/* Set maxWidth to "xs" */}
+        <Box sx={{ mt: 2 }}>
+          {mapMode === 1 ? (
+            <MapMode1 />
+          ) : (
+            <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+              <Box sx={{ p: 2 }}>
+                <Autocomplete
+                  options={Data}
+                  getOptionLabel={(option) => option.Brand}
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      label="แบรนด์"
+                      variant="outlined"
+                      size="small"
+                    />
+                  )}
                 />
-              ))}
+              </Box>
+              <Box sx={{ p: 2 }}>
+                <Autocomplete
+                  options={uniqueOptions}
+                  getOptionLabel={(option) => option.Origin}
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      label="จังหวัด"
+                      variant="outlined"
+                      size="small"
+                    />
+                  )}
+                />
+              </Box>
+              <Box sx={{ p: 2, flexGrow: 1, overflow: 'auto' }}>
+                {Data.map((data, index) => (
+                  <CardBrand
+                    key={index}
+                    Brand={data.Brand}
+                    Origin={data.Origin}
+                    Products={data.Products}
+                    ContactNumber={data.ContactNumber}
+                    Page={data.Page}
+                    sx={{
+                      width: '100%',
+                      marginBottom: '10px',
+                      '& .MuiTypography-root': {
+                        fontSize: '14px',
+                      },
+                    }}
+                  />
+                ))}
+              </Box>
             </Box>
+          )}
+          <Box sx={{ p: 2 }}>
+            <Typography variant="body2" color="text.secondary" align="center">
+              {'Powered by '}
+              <Link color="inherit" href="https://mui.com/">
+                 ประชาชนเบียร์
+              </Link>{' '}
+              {new Date().getFullYear()}
+              {'.'}
+            </Typography>
           </Box>
-        )}
-        <Box sx={{ p: 2 }}>
-          <Typography variant="body2" color="text.secondary" align="center">
-            {'Powered by '}
-            <Link color="inherit" href="https://mui.com/">
-              ประชาชนเบียร์
-            </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
-          </Typography>
         </Box>
-      </Box>
+      </Container>
     </ThemeProvider>
   );
 }
