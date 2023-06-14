@@ -46,7 +46,7 @@ function Copyright(props) {
 
 const defaultTheme = createTheme();
 
-export default function mainpage() {
+export default function MainPage() {
   const [mapMode, setMapMode] = React.useState(2);
   const [province, setProvince] = React.useState('');
 
@@ -63,8 +63,8 @@ export default function mainpage() {
       <iframe
         title="Google Maps"
         src="https://www.google.com/maps/d/u/0/edit?hl=th&mid=1va9XuQoSySb6ldSAw9pc4vgVLu342Zk&ll=13.078651172041047%2C101.5831765&z=6"
-        width="100vw"
-        height="100vh"
+        width="100%"
+        height="100%"
         style={{ border: 0 }}
         allowFullScreen
       ></iframe>
@@ -74,71 +74,51 @@ export default function mainpage() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <Box sx={{ bgcolor: 'background.paper' }}>
-        <Tabs onChange={handleChange} centered>
+        <Tabs value={mapMode} onChange={handleChange} centered>
           <Tab value={1} label="คราฟเบียร์" />
           <Tab value={2} label="สุราชุมชน" />
         </Tabs>
       </Box>
-      {/* <Container
-        component="main"
-        sx={{
-          width: '100%',
-          height: '100%',
-          backgroundColor: 'gray',
-        }}
-      > */}
-        <CssBaseline />
-        {/* <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            padding: 5,
-            borderRadius: 2,
-            height: '100%',
-            overflow: 'scroll',
-            bgcolor: 'white',
-          }}
-        > */}
-          {mapMode === 1 ? (
-            <MapMode1 />
-          ) : (
-            <div>
-              <Box sx={{ px: 2 }}>
-                <Autocomplete
-                  options={Data}
-                  getOptionLabel={(option) => option.Brand}
-                  renderInput={(params) => (
-                    <TextField {...params} label="แบรนด์" variant="outlined" />
-                  )}
+      <CssBaseline />
+      <Box sx={{ minHeight: 'calc(100vh - 48px)', display: 'flex', flexDirection: 'column' }}>
+        {mapMode === 1 ? (
+          <MapMode1 />
+        ) : (
+          <Box sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+            <Box sx={{ p: 2 }}>
+              <Autocomplete
+                options={Data}
+                getOptionLabel={(option) => option.Brand}
+                renderInput={(params) => (
+                  <TextField {...params} label="แบรนด์" variant="outlined" />
+                )}
+              />
+            </Box>
+            <Box sx={{ p: 2 }}>
+              <Autocomplete
+                options={uniqueOptions}
+                getOptionLabel={(option) => option.Origin}
+                renderInput={(params) => (
+                  <TextField {...params} label="จังหวัด" variant="outlined" />
+                )}
+              />
+            </Box>
+            <Box sx={{ p: 2, flexGrow: 1, overflow: 'auto' }}>
+              {Data.map((data, index) => (
+                <CardBrand
+                  key={index}
+                  Brand={data.Brand}
+                  Origin={data.Origin}
+                  Products={data.Products}
+                  ContactNumber={data.ContactNumber}
+                  Page={data.Page}
+                  sx={{ width: '100%', marginBottom: '10px' }}
                 />
-              </Box>
-              <Box sx={{ px: 2, mb: 2 }}>
-                <Autocomplete
-                  options={uniqueOptions}
-                  getOptionLabel={(option) => option.Origin}
-                  renderInput={(params) => (
-                    <TextField {...params} label="จังหวัด" variant="outlined" />
-                  )}
-                />
-              </Box>
-              <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', p: 2 }}>
-                {Data.map((data, index) => (
-                  <CardBrand
-                    key={index}
-                    Brand={data.Brand}
-                    Origin={data.Origin}
-                    Products={data.Products}
-                    ContactNumber={data.ContactNumber}
-                    Page={data.Page}
-                    sx={{ width: '100%', marginBottom: '10px' }}
-                  />
-                ))}
-              </Box>
-            </div>
-          )}
- 
-        <Box sx={{ mt: 8, mb: 4 }}>
+              ))}
+            </Box>
+          </Box>
+        )}
+        <Box sx={{ p: 2 }}>
           <Typography variant="body2" color="text.secondary" align="center">
             {'Powered by '}
             <Link color="inherit" href="https://mui.com/">
@@ -148,7 +128,7 @@ export default function mainpage() {
             {'.'}
           </Typography>
         </Box>
-      {/* </Container> */}
+      </Box>
     </ThemeProvider>
   );
 }
