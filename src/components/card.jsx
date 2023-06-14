@@ -35,7 +35,14 @@ export default function card(props) {
   };
 
   return (
-    <Card sx={{ maxWidth: '100%', border: '4px solid black' }}>
+    <Card 
+    sx={{
+        maxWidth: '100%',
+        width: '100%',
+        padding: '10px',
+        border: '1px solid #ccc',
+        marginBottom: '10px',
+      }}>
       <CardHeader
         // avatar={
         //   <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
