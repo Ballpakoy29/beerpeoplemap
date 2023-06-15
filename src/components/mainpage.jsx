@@ -68,7 +68,7 @@ export default function MainPage() {
         onChange={handleChange}
         centered
         variant="large"
-        TabIndicatorProps={{ style: { backgroundColor: 'black' } }}
+      //  TabIndicatorProps={{ style: { backgroundColor: 'black' } }}
         sx={{
           '& .MuiTab-root': {
             fontWeight: 'bold',
