@@ -47,7 +47,7 @@ export default function MainPage() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
- <Box >
+ <Box  sx={{ position: 'sticky', top: 0, zIndex: 999 }}>
        <Tabs
         value={mapMode}
         onChange={handleChange}
@@ -162,7 +162,7 @@ export default function MainPage() {
                       disableInput  
                 /> */}
               </Box>
-              <Box sx={{ p: 2, flexGrow: 1, overflow: 'auto' }}>
+              <Box sx={{ p: 2, flexGrow: 1, overflow: 'scroll', height : '80vh'  }}>
                 { Data.filter((data) => {
                     if (brand === "" && province === "") {
                       return true; // Show all data if brand and province are empty
