@@ -17,6 +17,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import { Select } from 'antd';
+import { DatePicker ,Button, Form, Space} from 'antd';
 
 
 
@@ -37,6 +38,7 @@ const defaultTheme = createTheme();
 
 export default function MainPage() {
         const brandSelectRef = useRef(null);
+        const provinceSelectRef = useRef(null);
         const sortedProvinces = Province.sort((a, b) => a.label.localeCompare(b.label));
         const [mapMode, setMapMode] = React.useState(2);
         const [brandDatas, setBrandDatas] = React.useState(null);
@@ -63,10 +65,12 @@ export default function MainPage() {
         ,[])
 
             return (
-              <ThemeProvider theme={defaultTheme}>
-            <Box  sx={{ position: 'sticky', top: 0, zIndex: 999 }}>
+          <ThemeProvider theme={defaultTheme}>
+             <CssBaseline />
+            <Box  sx={{ position: '', top: 0, zIndex: 999 }}>
               <Box >
                 <Tabs
+
                   value={mapMode}
                   onChange={handleChange}
                   centered
@@ -75,18 +79,21 @@ export default function MainPage() {
                   sx={{
                     '& .MuiTab-root': {
                       fontWeight: 'bold',
-                      fontSize: '1.2rem',
+                      fontSize: '1.4rem',
                     },
                   }}
                 >
+
                   <Tab value={1} label="คราฟต์เบียร์" />
                   <Tab value={2} label="สุราชุมชน" />
+
                 </Tabs>
               </Box>
-              </Box>
-                <CssBaseline />
-                <Container component="main"  sx={{ height: '100vh' , backgroundColor: 'black'  }}> {/* Set maxWidth to "xs" */}
-                  <Box sx={{ mt: 2 , height: '100vh' , backgroundColor: 'red' }}>
+             
+               
+                </Box>
+                <Container component="main"  sx={{ height: '80vh'   }}> {/* Set maxWidth to "xs" */}
+                  <Box sx={{ mt: 2 , height: '80vh'  }}>
                     {mapMode === 1 ? (
                              <iframe
                              src="https://www.google.com/maps/d/embed?mid=1tacrqkq-ij7HY4ROd9ZBvhuPvgSY0jk&ehbc=2E312F"
@@ -97,10 +104,11 @@ export default function MainPage() {
                              loading="lazy"
                            ></iframe>
                     ) : (<div>
-                      <Box sx={{ display: 'flex', flexDirection: 'column'  }}>
+                      <Box sx={{ display: 'flex' ,flexDirection: 'column'  }}>
                         <Box sx={{ p: 1 }}>
+                        <Form ref={brandSelectRef}>         
+                        <Form.Item name="brand" label=""  >
                         <Select
-                                      ref={brandSelectRef}
                                       size={"large"}
                                   //   showSearch
                                       allowClear ={true}
@@ -113,6 +121,9 @@ export default function MainPage() {
                                           
                                           setTxtProvince("");
                                           setTxtBrand(value);
+                                          if (provinceSelectRef.current) {
+                                            provinceSelectRef.current.resetFields();
+                                          }
                                         }
                                       }}
                                       style={{ width: '100%' }}
@@ -121,8 +132,12 @@ export default function MainPage() {
                                       // }
                                       options={brandDatas}
                                     />
+                                </Form.Item>   
+                             </Form>
                         </Box>
                         <Box sx={{ p: 1 }}>
+                        <Form ref={provinceSelectRef}>         
+                        <Form.Item name="province" label=""  >
                         <Select
                                       size={"large"}
                                     // showSearch
@@ -135,11 +150,8 @@ export default function MainPage() {
                                         } else {
                                           setTxtBrand("");
                                           setTxtProvince(value);
-
-                                          console.log(brandSelectRef.current)
                                           if (brandSelectRef.current) {
-                                            debugger
-                                            brandSelectRef.current.reset();
+                                            brandSelectRef.current.resetFields();
                                           }
                                         }
                                       }}
@@ -149,6 +161,8 @@ export default function MainPage() {
                                       }
                                       options={sortedProvinces}
                                     />
+                              </Form.Item>
+                              </Form>
                         </Box>
                         <Box sx={{ p: 2, flexGrow: 1, overflow: 'scroll', height : '80vh'  }}>
                            { Data.filter((data) => {
@@ -164,7 +178,7 @@ export default function MainPage() {
                                 ); // Filter by partial match for both brand and province
                               }
                             }).map((element, index) => (
-                              <CardBrand
+                              <CardBrand 
                               {...element} 
                               key={index}
                                 // sx={{

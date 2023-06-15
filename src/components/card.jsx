@@ -43,14 +43,10 @@ export default function card(props) {
         padding: '5px',
         border: '1px solid #ccc',
         marginBottom: '10px',
+        fontFamily:  ['Anuphan', 'sans-serif'] .join(','),
       }}
       >
-      <CardHeader
-        // avatar={
-        //   <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-        //     R
-        //   </Avatar>
-        // }
+      <CardHeader 
         title={props.brand}
         subheader={props.province}
       />

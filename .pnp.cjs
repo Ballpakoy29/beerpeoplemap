@@ -47,7 +47,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:ca840dccb4d2024006c30185664510262075147f048cd0307b9e7645217704fb7c7e9ca33b52422b462c7933d89cc8413f91ae3f40114d99f1ec0b10f907c631#npm:18.2.0"],\
             ["styled-components", "virtual:ca840dccb4d2024006c30185664510262075147f048cd0307b9e7645217704fb7c7e9ca33b52422b462c7933d89cc8413f91ae3f40114d99f1ec0b10f907c631#npm:6.0.0-rc.2-4007"],\
-            ["vite", "virtual:ca840dccb4d2024006c30185664510262075147f048cd0307b9e7645217704fb7c7e9ca33b52422b462c7933d89cc8413f91ae3f40114d99f1ec0b10f907c631#npm:4.3.9"]\
+            ["vite", "virtual:ca840dccb4d2024006c30185664510262075147f048cd0307b9e7645217704fb7c7e9ca33b52422b462c7933d89cc8413f91ae3f40114d99f1ec0b10f907c631#npm:4.3.9"],\
+            ["webfontloader", "npm:1.6.28"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -4476,7 +4477,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:ca840dccb4d2024006c30185664510262075147f048cd0307b9e7645217704fb7c7e9ca33b52422b462c7933d89cc8413f91ae3f40114d99f1ec0b10f907c631#npm:18.2.0"],\
             ["styled-components", "virtual:ca840dccb4d2024006c30185664510262075147f048cd0307b9e7645217704fb7c7e9ca33b52422b462c7933d89cc8413f91ae3f40114d99f1ec0b10f907c631#npm:6.0.0-rc.2-4007"],\
-            ["vite", "virtual:ca840dccb4d2024006c30185664510262075147f048cd0307b9e7645217704fb7c7e9ca33b52422b462c7933d89cc8413f91ae3f40114d99f1ec0b10f907c631#npm:4.3.9"]\
+            ["vite", "virtual:ca840dccb4d2024006c30185664510262075147f048cd0307b9e7645217704fb7c7e9ca33b52422b462c7933d89cc8413f91ae3f40114d99f1ec0b10f907c631#npm:4.3.9"],\
+            ["webfontloader", "npm:1.6.28"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -8949,6 +8951,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "stylus",\
             "sugarss",\
             "terser"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["webfontloader", [\
+        ["npm:1.6.28", {\
+          "packageLocation": "./.yarn/cache/webfontloader-npm-1.6.28-5e6803960c-cbebbe593c.zip/node_modules/webfontloader/",\
+          "packageDependencies": [\
+            ["webfontloader", "npm:1.6.28"]\
           ],\
           "linkType": "HARD"\
         }]\
