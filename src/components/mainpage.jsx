@@ -61,12 +61,25 @@ export default function MainPage() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Box sx={{ bgcolor: 'background.paper' }}>
-        <Tabs value={mapMode} onChange={handleChange} centered>
-          <Tab value={1} label="คราฟเบียร์" />
-          <Tab value={2} label="สุราชุมชน" />
-        </Tabs>
-      </Box>
+ <Box sx={{ bgcolor: 'background.paper' ,
+}} >
+       <Tabs
+        value={mapMode}
+        onChange={handleChange}
+        centered
+        variant="large"
+        TabIndicatorProps={{ style: { backgroundColor: 'black' } }}
+        sx={{
+          '& .MuiTab-root': {
+            fontWeight: 'bold',
+            fontSize: '1.2rem',
+          },
+        }}
+      >
+        <Tab value={1} label="คราฟต์เบียร์" />
+        <Tab value={2} label="สุราชุมชน" />
+      </Tabs>
+    </Box>
       <CssBaseline />
       <Container component="main" maxWidth="xs"> {/* Set maxWidth to "xs" */}
         <Box sx={{ mt: 2 }}>
@@ -74,7 +87,7 @@ export default function MainPage() {
                   <iframe src="https://www.google.com/maps/d/embed?mid=1tacrqkq-ij7HY4ROd9ZBvhuPvgSY0jk&ehbc=2E312F" width="300" height="600"></iframe>
           ) : (
             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-              <Box sx={{ p: 2 }}>
+              <Box sx={{ p: 1 }}>
                 <Autocomplete
                   options={Data}
                   getOptionLabel={(option) => option.Brand}
@@ -83,12 +96,12 @@ export default function MainPage() {
                       {...params}
                       label="แบรนด์"
                       variant="outlined"
-                      size="small"
+                      size="Large"
                     />
                   )}
                 />
               </Box>
-              <Box sx={{ p: 2 }}>
+              <Box sx={{ p: 1 }}>
                 <Autocomplete
                   options={uniqueOptions}
                   getOptionLabel={(option) => option.Origin}
@@ -97,7 +110,7 @@ export default function MainPage() {
                       {...params}
                       label="จังหวัด"
                       variant="outlined"
-                      size="small"
+                      size="Large"
                     />
                   )}
                 />
