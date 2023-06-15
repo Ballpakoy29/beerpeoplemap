@@ -85,10 +85,17 @@ export default function MainPage() {
               </Box>
               </Box>
                 <CssBaseline />
-                <Container component="main" maxWidth="xs"> {/* Set maxWidth to "xs" */}
-                  <Box sx={{ mt: 2 }}>
+                <Container component="main"  sx={{ height: '100vh' , backgroundColor: 'black'  }}> {/* Set maxWidth to "xs" */}
+                  <Box sx={{ mt: 2 , height: '100vh' , backgroundColor: 'red' }}>
                     {mapMode === 1 ? (
-                            <iframe src="https://www.google.com/maps/d/embed?mid=1tacrqkq-ij7HY4ROd9ZBvhuPvgSY0jk&ehbc=2E312F" width="100%" height="100vh"></iframe>
+                             <iframe
+                             src="https://www.google.com/maps/d/embed?mid=1tacrqkq-ij7HY4ROd9ZBvhuPvgSY0jk&ehbc=2E312F"
+                             width="100%"
+                             height="100%"
+                             style={{ border: 0 }}
+                             allowFullScreen=""
+                             loading="lazy"
+                           ></iframe>
                     ) : (<div>
                       <Box sx={{ display: 'flex', flexDirection: 'column'  }}>
                         <Box sx={{ p: 1 }}>
