@@ -58,18 +58,6 @@ export default function MainPage() {
     setMapMode(newValue);
   };
 
-  function MapMode1() {
-    return (
-      <iframe
-        title="Google Maps"
-        src="https://www.google.com/maps/d/u/0/edit?hl=th&mid=1va9XuQoSySb6ldSAw9pc4vgVLu342Zk&ll=13.078651172041047%2C101.5831765&z=6"
-        width="100%"
-        height="100%"
-        style={{ border: 0 }}
-        allowFullScreen
-      ></iframe>
-    );
-  }
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -83,7 +71,7 @@ export default function MainPage() {
       <Container component="main" maxWidth="xs"> {/* Set maxWidth to "xs" */}
         <Box sx={{ mt: 2 }}>
           {mapMode === 1 ? (
-            <MapMode1 />
+                  <iframe src="https://www.google.com/maps/d/embed?mid=1tacrqkq-ij7HY4ROd9ZBvhuPvgSY0jk&ehbc=2E312F" width="300" height="600"></iframe>
           ) : (
             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
               <Box sx={{ p: 2 }}>
