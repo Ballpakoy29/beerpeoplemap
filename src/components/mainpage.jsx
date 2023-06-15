@@ -47,22 +47,22 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function MainPage() {
-  const [mapMode, setMapMode] = React.useState(2);
-  const [province, setProvince] = React.useState('');
+        const [mapMode, setMapMode] = React.useState(2);
+        const [brand,setBrand] = React.useState("");
+        const [province,setProvince] = React.useState("");
 
-  const uniqueOptions = Data.filter((value, index, self) => {
-    return self.findIndex((o) => o.Origin === value.Origin) === index;
-  });
+
+        const uniqueOptions = Data.filter((value, index, self) => {
+          return self.findIndex((o) => o.Origin === value.Origin) === index;
+        });
 
   const handleChange = (event, newValue) => {
     setMapMode(newValue);
   };
 
-
   return (
     <ThemeProvider theme={defaultTheme}>
- <Box sx={{ bgcolor: 'background.paper' ,
-}} >
+ <Box >
        <Tabs
         value={mapMode}
         onChange={handleChange}
@@ -91,6 +91,12 @@ export default function MainPage() {
                 <Autocomplete
                   options={Data}
                   getOptionLabel={(option) => option.Brand}
+                  onChange={(event, newValue) => {
+                    setBrand(newValue?.Brand || ""); // Update the brand state
+                  }}
+                  onInputChange={(event, newInputValue) => {
+                    setBrand(newInputValue || ""); // Update the brand state with the new input value
+                  }}
                   renderInput={(params) => (
                     <TextField
                       {...params}
@@ -103,48 +109,69 @@ export default function MainPage() {
               </Box>
               <Box sx={{ p: 1 }}>
                 <Autocomplete
-                  options={uniqueOptions}
-                  getOptionLabel={(option) => option.Origin}
-                  renderInput={(params) => (
-                    <TextField
-                      {...params}
-                      label="จังหวัด"
-                      variant="outlined"
-                      size="Large"
-                    />
-                  )}
+                      options={uniqueOptions}
+                      getOptionLabel={(option) => option.Origin}
+                      onChange={(event, newValue) => {
+                        setProvince(newValue?.Origin || ""); // Update the province state
+                      }}
+                      onInputChange={(event, newInputValue) => {
+                        setProvince(newInputValue || ""); // Update the brand state with the new input value
+                      }}
+                      
+                      renderInput={(params) => (
+                        <TextField
+                          {...params}
+                          label="จังหวัด"
+                          variant="outlined"
+                          size="Large"
+                        />
+                      )}
                 />
               </Box>
               <Box sx={{ p: 2, flexGrow: 1, overflow: 'auto' }}>
-                {Data.map((data, index) => (
-                  <CardBrand
-                    key={index}
-                    Brand={data.Brand}
-                    Origin={data.Origin}
-                    Products={data.Products}
-                    ContactNumber={data.ContactNumber}
-                    Page={data.Page}
-                    sx={{
-                      width: '100%',
-                      marginBottom: '10px',
-                      '& .MuiTypography-root': {
-                        fontSize: '14px',
-                      },
-                    }}
-                  />
-                ))}
+                { Data.filter((data) => {
+                    if (brand === "" && province === "") {
+                      return true; // Show all data if brand and province are empty
+                    } else if (brand === "") {
+                      return data.Origin === (province); // Filter by partial match for province if brand is empty
+                    } else if (province === "") {
+                      return data.Brand === (brand); // Filter by partial match for brand if province is empty
+                    } else {
+                      return (
+                        data.Brand === (brand) && data.Origin === province
+                      ); // Filter by partial match for both brand and province
+                    }
+                  }).map((data, index) => (
+                    <CardBrand
+                      key={index}
+                      Brand={data.Brand}
+                      Origin={data.Origin}
+                      Products={data.Products}
+                      ContactNumber={data.ContactNumber}
+                      Page={data.Page}
+                      sx={{
+                        width: '100%',
+                        marginBottom: '10px',
+                        '& .MuiTypography-root': {
+                          fontSize: '14px',
+                        },
+                      }}
+                    />
+              )) }
+           
               </Box>
             </Box>
           )}
           <Box sx={{ p: 2 }}>
-            <Typography variant="body2" color="text.secondary" align="center">
+            <Copyright></Copyright>
+            {/* <Typography variant="body2" color="text.secondary" align="center">
               {'Powered by '}
               <Link color="inherit" href="https://mui.com/">
                  ประชาชนเบียร์
               </Link>{' '}
               {new Date().getFullYear()}
               {'.'}
-            </Typography>
+            </Typography> */}
           </Box>
         </Box>
       </Container>
