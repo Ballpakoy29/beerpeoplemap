@@ -36,6 +36,7 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function MainPage() {
+        const brandSelectRef = useRef(null);
         const sortedProvinces = Province.sort((a, b) => a.label.localeCompare(b.label));
         const [mapMode, setMapMode] = React.useState(2);
         const [brandDatas, setBrandDatas] = React.useState(null);
@@ -45,6 +46,8 @@ export default function MainPage() {
 
 
         const handleChange = (event, newValue) => {
+          setTxtBrand("");
+          setTxtProvince("");
           setMapMode(newValue);
         };
 
@@ -85,9 +88,10 @@ export default function MainPage() {
                     {mapMode === 1 ? (
                             <iframe src="https://www.google.com/maps/d/embed?mid=1tacrqkq-ij7HY4ROd9ZBvhuPvgSY0jk&ehbc=2E312F" width="300" height="600"></iframe>
                     ) : (<div>
-                      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                      <Box sx={{ display: 'flex', flexDirection: 'column' , position: 'sticky', top: 0, zIndex: 999  }}>
                         <Box sx={{ p: 1 }}>
                         <Select
+                                      ref={brandSelectRef}
                                       size={"large"}
                                   //   showSearch
                                       allowClear ={true}
@@ -97,6 +101,8 @@ export default function MainPage() {
                                         if (option === undefined) {
                                           setTxtBrand(""); // Set the state to null when the "Clear" button is clicked
                                         } else {
+                                          
+                                          setTxtProvince("");
                                           setTxtBrand(value);
                                         }
                                       }}
@@ -118,7 +124,14 @@ export default function MainPage() {
                                         if (option === undefined) {
                                           setTxtProvince(""); // Set the state to null when the "Clear" button is clicked
                                         } else {
+                                          setTxtBrand("");
                                           setTxtProvince(value);
+
+                                          console.log(brandSelectRef.current)
+                                          if (brandSelectRef.current) {
+                                            debugger
+                                            brandSelectRef.current.reset();
+                                          }
                                         }
                                       }}
                                       style={{ width: '100%' }}
