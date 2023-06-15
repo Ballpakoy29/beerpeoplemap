@@ -39,8 +39,9 @@ export default function card(props) {
     sx={{
         maxWidth: '100vw',
         width: '100%',
-        padding: '10px',
-        border: '2px solid #ccc',
+        height : 'auto',
+        padding: '5px',
+        border: '1px solid #ccc',
         marginBottom: '10px',
       }}
       >
@@ -60,15 +61,17 @@ export default function card(props) {
         alt="Paella dish"
       /> */}
       <CardContent>
+      <Typography variant="body2" color="text.secondary">
+               โรงผลิต :  {props.spirit}
+        </Typography>
         <Typography variant="body2" color="text.secondary">
-                {/* {props.style}
-                {props.tel} */}
+               ประเภท :  {props.style}
         </Typography>
       </CardContent>
 
       <CardActions disableSpacing>
       <Typography variant="body2" color="text.secondary">
-                กดเพื่อดูรายละเอียด
+          
         </Typography>
         <ExpandMore
           expand={expanded}
@@ -81,29 +84,22 @@ export default function card(props) {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Method:</Typography>
+          <Typography paragraph color="text.primary">รายละเอียด:</Typography>
           <Typography paragraph>
-                
+                ความเป็นมา : {props.history}
           </Typography>
           <Typography paragraph>
-            Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over
-            medium-high heat. Add chicken, shrimp and chorizo, and cook, stirring
-            occasionally until lightly browned, 6 to 8 minutes. Transfer shrimp to a
-            large plate and set aside, leaving chicken and chorizo in the pan. Add
-            pimentón, bay leaves, garlic, tomatoes, onion, salt and pepper, and cook,
-            stirring often until thickened and fragrant, about 10 minutes. Add
-            saffron broth and remaining 4 1/2 cups chicken broth; bring to a boil.
+                แนะนำแบรนด์ : {props.history}
           </Typography>
           <Typography paragraph>
-            Add rice and stir very gently to distribute. Top with artichokes and
-            peppers, and cook without stirring, until most of the liquid is absorbed,
-            15 to 18 minutes. Reduce heat to medium-low, add reserved shrimp and
-            mussels, tucking them down into the rice, and cook again without
-            stirring, until mussels have opened and rice is just tender, 5 to 7
-            minutes more. (Discard any mussels that don&apos;t open.)
+
           </Typography>
-          <Typography>
-            Set aside off of the heat to let rest for 10 minutes, and then serve.
+          <Typography paragraph color="text.primary">ติดต่อ</Typography>
+          <Typography paragraph>
+                Page : <a href={props.page}>{props.page}</a>
+          </Typography>
+          <Typography paragraph>
+                ติดต่อ : {props.tel} {props.contact}
           </Typography>
         </CardContent>
       </Collapse>

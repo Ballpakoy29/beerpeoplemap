@@ -64,7 +64,8 @@ export default function MainPage() {
 
             return (
               <ThemeProvider theme={defaultTheme}>
-          <Box  sx={{ position: 'sticky', top: 0, zIndex: 999 }}>
+            <Box  sx={{ position: 'sticky', top: 0, zIndex: 999 }}>
+              <Box >
                 <Tabs
                   value={mapMode}
                   onChange={handleChange}
@@ -82,13 +83,14 @@ export default function MainPage() {
                   <Tab value={2} label="สุราชุมชน" />
                 </Tabs>
               </Box>
+              </Box>
                 <CssBaseline />
                 <Container component="main" maxWidth="xs"> {/* Set maxWidth to "xs" */}
                   <Box sx={{ mt: 2 }}>
                     {mapMode === 1 ? (
                             <iframe src="https://www.google.com/maps/d/embed?mid=1tacrqkq-ij7HY4ROd9ZBvhuPvgSY0jk&ehbc=2E312F" width="300" height="600"></iframe>
                     ) : (<div>
-                      <Box sx={{ display: 'flex', flexDirection: 'column' , position: 'sticky', top: 0, zIndex: 999  }}>
+                      <Box sx={{ display: 'flex', flexDirection: 'column'  }}>
                         <Box sx={{ p: 1 }}>
                         <Select
                                       ref={brandSelectRef}
