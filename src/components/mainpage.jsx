@@ -8,27 +8,13 @@ import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import ButtonGroup from '@mui/material/ButtonGroup';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { Autocomplete } from '@mui/material';
 import Data from '../data/map_01';
-import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
-import Collapse from '@mui/material/Collapse';
-import IconButton from '@mui/material/IconButton';
-import { red } from '@mui/material/colors';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
 import CardBrand from './card';
 
 function Copyright(props) {
@@ -50,15 +36,13 @@ export default function MainPage() {
         const [mapMode, setMapMode] = React.useState(2);
         const [brand,setBrand] = React.useState("");
         const [province,setProvince] = React.useState("");
-
-
         const uniqueOptions = Data.filter((value, index, self) => {
           return self.findIndex((o) => o.Origin === value.Origin) === index;
         });
 
-  const handleChange = (event, newValue) => {
-    setMapMode(newValue);
-  };
+        const handleChange = (event, newValue) => {
+          setMapMode(newValue);
+        };
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -94,9 +78,6 @@ export default function MainPage() {
                   onChange={(event, newValue) => {
                     setBrand(newValue?.Brand || ""); // Update the brand state
                   }}
-                  onInputChange={(event, newInputValue) => {
-                    setBrand(newInputValue || ""); // Update the brand state with the new input value
-                  }}
                   renderInput={(params) => (
                     <TextField
                       {...params}
@@ -105,6 +86,7 @@ export default function MainPage() {
                       size="Large"
                     />
                   )}
+                  disableInput  
                 />
               </Box>
               <Box sx={{ p: 1 }}>
@@ -114,10 +96,6 @@ export default function MainPage() {
                       onChange={(event, newValue) => {
                         setProvince(newValue?.Origin || ""); // Update the province state
                       }}
-                      onInputChange={(event, newInputValue) => {
-                        setProvince(newInputValue || ""); // Update the brand state with the new input value
-                      }}
-                      
                       renderInput={(params) => (
                         <TextField
                           {...params}
@@ -126,6 +104,7 @@ export default function MainPage() {
                           size="Large"
                         />
                       )}
+                      disableInput  
                 />
               </Box>
               <Box sx={{ p: 2, flexGrow: 1, overflow: 'auto' }}>
@@ -149,13 +128,13 @@ export default function MainPage() {
                       Products={data.Products}
                       ContactNumber={data.ContactNumber}
                       Page={data.Page}
-                      sx={{
-                        width: '100%',
-                        marginBottom: '10px',
-                        '& .MuiTypography-root': {
-                          fontSize: '14px',
-                        },
-                      }}
+                      // sx={{
+                      //   width: '100%',
+                      //   marginBottom: '10px',
+                      //   '& .MuiTypography-root': {
+                      //     fontSize: '14px',
+                      //   },
+                      // }}
                     />
               )) }
            
@@ -164,14 +143,6 @@ export default function MainPage() {
           )}
           <Box sx={{ p: 2 }}>
             <Copyright></Copyright>
-            {/* <Typography variant="body2" color="text.secondary" align="center">
-              {'Powered by '}
-              <Link color="inherit" href="https://mui.com/">
-                 ประชาชนเบียร์
-              </Link>{' '}
-              {new Date().getFullYear()}
-              {'.'}
-            </Typography> */}
           </Box>
         </Box>
       </Container>

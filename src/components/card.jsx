@@ -37,23 +37,19 @@ export default function card(props) {
   return (
     <Card 
     sx={{
-        maxWidth: '100%',
+        maxWidth: '100vw',
         width: '100%',
         padding: '10px',
-        border: '1px solid #ccc',
+        border: '2px solid #ccc',
         marginBottom: '10px',
-      }}>
+      }}
+      >
       <CardHeader
         // avatar={
         //   <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
         //     R
         //   </Avatar>
         // }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
         title={props.Brand}
         subheader={props.Origin}
       />
@@ -67,16 +63,13 @@ export default function card(props) {
         <Typography variant="body2" color="text.secondary">
                 {props.Products}
                 {props.ContactNumber}
-                {props.Page}
         </Typography>
       </CardContent>
+
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
+      <Typography variant="body2" color="text.secondary">
+                กดเพื่อดูรายละเอียด
+        </Typography>
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
