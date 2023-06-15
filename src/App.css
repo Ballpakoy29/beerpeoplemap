@@ -1,8 +1,16 @@
+/* fontStyles.css */
 
+@import url('https://fonts.googleapis.com/css2?family=Anuphan:wght@200;700&display=swap');
+
+/* Additional styles */
+.app {
+  font-family: 'Anuphan', sans-serif;
+}
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
+  font-family: 'Anuphan', sans-serif;
   /* font-family: 'Anuphan', sans-serif;
   color: red; */
 /* //  text-align: center; */

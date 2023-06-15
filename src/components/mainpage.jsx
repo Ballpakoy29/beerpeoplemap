@@ -18,6 +18,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import { Select } from 'antd';
 import { DatePicker ,Button, Form, Space} from 'antd';
+import './mainp.css'
 
 
 
@@ -67,7 +68,7 @@ export default function MainPage() {
             return (
           <ThemeProvider theme={defaultTheme}>
              <CssBaseline />
-            <Box  sx={{ position: '', top: 0, zIndex: 999 }}>
+            <Box  sx={{ position: '', top: 0, zIndex: 999 , }}>
               <Box >
                 <Tabs
 
@@ -80,6 +81,7 @@ export default function MainPage() {
                     '& .MuiTab-root': {
                       fontWeight: 'bold',
                       fontSize: '1.4rem',
+                      fontFamily: 'Anuphan, sans-serif', 
                     },
                   }}
                 >
@@ -104,7 +106,7 @@ export default function MainPage() {
                              loading="lazy"
                            ></iframe>
                     ) : (<div>
-                      <Box sx={{ display: 'flex' ,flexDirection: 'column'  }}>
+                      <Box sx={{ display: 'flex' ,flexDirection: 'column'   }}>
                         <Box sx={{ p: 1 }}>
                         <Form ref={brandSelectRef}>         
                         <Form.Item name="brand" label=""  >

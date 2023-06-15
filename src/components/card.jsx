@@ -14,6 +14,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import './mainp.css' 
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -43,12 +44,25 @@ export default function card(props) {
         padding: '5px',
         border: '1px solid #ccc',
         marginBottom: '10px',
-        fontFamily:  ['Anuphan', 'sans-serif'] .join(','),
       }}
       >
       <CardHeader 
         title={props.brand}
         subheader={props.province}
+        titleTypographyProps={{
+          style: {
+            fontFamily: 'Anuphan, sans-serif', // Add your desired font family here
+            fontSize: '1.4rem',
+            fontWeight: 'bold',
+          },
+        }}
+        subheaderTypographyProps={{
+          style: {
+            fontFamily: 'Anuphan, sans-serif', // Add your desired font family here
+            fontSize: '1.0rem',
+            fontWeight: 600,
+          },
+        }}
       />
       {/* <CardMedia
         component="img"
@@ -57,10 +71,20 @@ export default function card(props) {
         alt="Paella dish"
       /> */}
       <CardContent>
-      <Typography variant="body2" color="text.secondary">
+      <Typography variant="body2" color="text.secondary"
+      sx={{
+        fontFamily: 'Anuphan, sans-serif', // Add your desired font family here
+        fontSize: '0.8rem',
+        fontWeight: 'bold',
+      }}>
                โรงผลิต :  {props.spirit}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="text.secondary" 
+          sx={{
+            fontFamily: 'Anuphan, sans-serif', // Add your desired font family here
+            fontSize: '0.8rem',
+            fontWeight: 'bold',
+          }}>
                ประเภท :  {props.style}
         </Typography>
       </CardContent>
@@ -79,22 +103,55 @@ export default function card(props) {
         </ExpandMore>
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-          <Typography paragraph color="text.primary">รายละเอียด:</Typography>
-          <Typography paragraph>
+        <CardContent >
+          <Typography paragraph color="text.primary"
+            sx={{
+              fontFamily: 'Anuphan, sans-serif', // Add your desired font family here
+              fontSize: '0.8rem',
+              fontWeight: 600,
+            }}>
+              รายละเอียด:
+            </Typography>
+          <Typography paragraph color="text.primary"
+            sx={{
+              fontFamily: 'Anuphan, sans-serif', // Add your desired font family here
+              fontSize: '0.8rem',
+              fontWeight: 500,
+            }}>
                 ความเป็นมา : {props.history}
           </Typography>
-          <Typography paragraph>
+          <Typography paragraph color="text.primary"
+            sx={{
+              fontFamily: 'Anuphan, sans-serif', // Add your desired font family here
+              fontSize: '0.8rem',
+              fontWeight: 500,
+            }}>
                 แนะนำแบรนด์ : {props.history}
           </Typography>
           <Typography paragraph>
 
           </Typography>
-          <Typography paragraph color="text.primary">ติดต่อ</Typography>
-          <Typography paragraph>
+          <Typography paragraph color="text.primary"
+            sx={{
+              fontFamily: 'Anuphan, sans-serif', // Add your desired font family here
+              fontSize: '0.8rem',
+              fontWeight: 500,
+            }}>
+            ติดต่อ</Typography>
+            <Typography paragraph color="text.primary"
+            sx={{
+              fontFamily: 'Anuphan, sans-serif', // Add your desired font family here
+              fontSize: '0.8rem',
+              fontWeight: 500,
+            }}>
                 Page : <a href={props.page}>{props.page}</a>
           </Typography>
-          <Typography paragraph>
+          <Typography paragraph color="text.primary"
+            sx={{
+              fontFamily: 'Anuphan, sans-serif', // Add your desired font family here
+              fontSize: '0.8rem',
+              fontWeight: 500,
+            }}>
                 ติดต่อ : {props.tel} {props.contact}
           </Typography>
         </CardContent>
