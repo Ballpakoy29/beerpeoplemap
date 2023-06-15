@@ -50,8 +50,8 @@ export default function card(props) {
         //     R
         //   </Avatar>
         // }
-        title={props.Brand}
-        subheader={props.Origin}
+        title={props.brand}
+        subheader={props.province}
       />
       {/* <CardMedia
         component="img"
@@ -61,8 +61,8 @@ export default function card(props) {
       /> */}
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-                {props.Products}
-                {props.ContactNumber}
+                {/* {props.style}
+                {props.tel} */}
         </Typography>
       </CardContent>
 
