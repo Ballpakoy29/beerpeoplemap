@@ -1,12 +1,7 @@
 import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
@@ -16,6 +11,11 @@ import Tab from '@mui/material/Tab';
 import { Autocomplete } from '@mui/material';
 import Data from '../data/map_01';
 import CardBrand from './card';
+// import Select from '@mui/material/Select';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import { Select } from 'antd';
 
 function Copyright(props) {
   return (
@@ -36,6 +36,7 @@ export default function MainPage() {
         const [mapMode, setMapMode] = React.useState(2);
         const [brand,setBrand] = React.useState("");
         const [province,setProvince] = React.useState("");
+
         const uniqueOptions = Data.filter((value, index, self) => {
           return self.findIndex((o) => o.Origin === value.Origin) === index;
         });
@@ -69,10 +70,37 @@ export default function MainPage() {
         <Box sx={{ mt: 2 }}>
           {mapMode === 1 ? (
                   <iframe src="https://www.google.com/maps/d/embed?mid=1tacrqkq-ij7HY4ROd9ZBvhuPvgSY0jk&ehbc=2E312F" width="300" height="600"></iframe>
-          ) : (
+          ) : (<div>
             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
               <Box sx={{ p: 1 }}>
-                <Autocomplete
+              <Select
+                            size={"large"}
+                            showSearch
+                            allowClear ={true}
+                            placeholder="เลือกตามแบรนด์"
+                            optionFilterProp="children"
+                            // onChange={onChange}
+                            // onSearch={onSearch}
+                            style={{ width: '100%' }}
+                            filterOption={(input, option) =>
+                              (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
+                            }
+                            options={[
+                              {
+                                value: 'jack',
+                                label: 'Jack',
+                              },
+                              {
+                                value: 'lucy',
+                                label: 'Lucy',
+                              },
+                              {
+                                value: 'tom',
+                                label: 'Tom',
+                              },
+                            ]}
+                          />
+                {/* <Autocomplete
                   options={Data}
                   getOptionLabel={(option) => option.Brand}
                   onChange={(event, newValue) => {
@@ -87,10 +115,37 @@ export default function MainPage() {
                     />
                   )}
                   disableInput  
-                />
+                /> */}
               </Box>
               <Box sx={{ p: 1 }}>
-                <Autocomplete
+              <Select
+                            size={"large"}
+                            showSearch
+                            allowClear ={true}
+                            placeholder="เลือกตามจังหวัด"
+                            optionFilterProp="children"
+                            // onChange={onChange}
+                            // onSearch={onSearch}
+                            style={{ width: '100%' }}
+                            filterOption={(input, option) =>
+                              (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
+                            }
+                            options={[
+                              {
+                                value: 'jack',
+                                label: 'Jack',
+                              },
+                              {
+                                value: 'lucy',
+                                label: 'Lucy',
+                              },
+                              {
+                                value: 'tom',
+                                label: 'Tom',
+                              },
+                            ]}
+                          />
+                {/* <Autocomplete
                       options={uniqueOptions}
                       getOptionLabel={(option) => option.Origin}
                       onChange={(event, newValue) => {
@@ -105,7 +160,7 @@ export default function MainPage() {
                         />
                       )}
                       disableInput  
-                />
+                /> */}
               </Box>
               <Box sx={{ p: 2, flexGrow: 1, overflow: 'auto' }}>
                 { Data.filter((data) => {
@@ -140,6 +195,8 @@ export default function MainPage() {
            
               </Box>
             </Box>
+          </div>
+            
           )}
           <Box sx={{ p: 2 }}>
             <Copyright></Copyright>
