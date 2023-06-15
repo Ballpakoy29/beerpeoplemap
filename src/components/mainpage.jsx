@@ -75,7 +75,7 @@ export default function MainPage() {
               <Box sx={{ p: 1 }}>
               <Select
                             size={"large"}
-                            showSearch
+                         //   showSearch
                             allowClear ={true}
                             placeholder="เลือกตามแบรนด์"
                             optionFilterProp="children"
@@ -120,7 +120,7 @@ export default function MainPage() {
               <Box sx={{ p: 1 }}>
               <Select
                             size={"large"}
-                            showSearch
+                           // showSearch
                             allowClear ={true}
                             placeholder="เลือกตามจังหวัด"
                             optionFilterProp="children"
