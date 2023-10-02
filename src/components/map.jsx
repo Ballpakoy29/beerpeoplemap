@@ -16,7 +16,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import AirportShuttleIcon from '@mui/icons-material/AirportShuttle';
 import imgCard from './../assets/event.png';
-import imgPromotion from './../assets/promotion2.png';
+import imgPromotion from './../assets/promotion1.png';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
