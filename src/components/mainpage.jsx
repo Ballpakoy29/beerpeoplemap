@@ -21,7 +21,10 @@ import { DatePicker ,Button, Form, Space} from 'antd';
 import './mainp.css'
 
 import MapMode from './map';
-
+import Beer from './beer';
+import { Image } from 'antd';
+import SpiritImg from './../assets/spirit.png';
+import BeerImg from './../assets/beer.png';
 
 
 
@@ -113,6 +116,10 @@ export default function MainPage() {
                                 <div>
                                     <Box sx={{ display: 'flex' ,flexDirection: 'column'   }}>
                                             <Box sx={{ p: 1 }}>
+
+                                          {/* ยังไม่เลือกให้แสดงภาพ */}
+                                          
+
                                             {/* <Form ref={brandSelectRef}>         
                                             <Form.Item name="brand" label=""  >
                                             <Select
@@ -142,68 +149,25 @@ export default function MainPage() {
                                                     </Form.Item>   
                                                 </Form> */}
                                             </Box>
-                                            <Box sx={{ p: 1 }}>
-                                            {/* <Form ref={provinceSelectRef}>         
-                                            <Form.Item name="province" label=""  >
-                                            <Select
-                                                          size={"large"}
-                                                        // showSearch
-                                                          allowClear ={true}
-                                                          placeholder="เลือกตามจังหวัด"
-                                                          optionFilterProp="children"
-                                                          onChange={(value, option) => {
-                                                            if (option === undefined) {
-                                                              setTxtProvince(""); // Set the state to null when the "Clear" button is clicked
-                                                            } else {
-                                                              setTxtBrand("");
-                                                              setTxtProvince(value);
-                                                              if (brandSelectRef.current) {
-                                                                brandSelectRef.current.resetFields();
-                                                              }
-                                                            }
-                                                          }}
-                                                          style={{ width: '100%' }}
-                                                          filterOption={(input, option) =>
-                                                            (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
-                                                          }
-                                                          options={sortedProvinces}
-                                                        />
-                                                  </Form.Item>
-                                                  </Form> */}
-                                            </Box>
-                                            <Box sx={{ p: 2, flexGrow: 1, overflow: 'scroll', height : '80vh'  }}>
-                                              {/* { Data.filter((data) => {
-                                                  if (txtBrand === "" && txtProvince === "") {
-                                                    return true; // Show all data if brand and province are empty
-                                                  } else if (txtBrand === "") {
-                                                    return data.province === (txtProvince); // Filter by partial match for province if brand is empty
-                                                  } else if (txtProvince === "") {
-                                                    return data.brand === (txtBrand); // Filter by partial match for brand if province is empty
-                                                  } else {
-                                                    return (
-                                                      data.Brand === (txtBrand) && data.province === (txtProvince)
-                                                    ); // Filter by partial match for both brand and province
-                                                  }
-                                                }).map((element, index) => (
-                                                  <CardBrand 
-                                                  {...element} 
-                                                  key={index}
-                                                    // sx={{
-                                                    //   width: '100%',
-                                                    //   marginBottom: '10px',
-                                                    //   '& .MuiTypography-root': {
-                                                    //     fontSize: '14px',
-                                                    //   },
-                                                    // }}
-                                                  />
-                                            )) } */}
-                                        
-                                            </Box>
+                                          {/* <Beer></Beer>
+                                          <Beer></Beer>
+                                          <Beer></Beer> */}
                                           </Box>
+                                          <Box sx={{ p: 1 }}>
+                                              <Image                               
+                                                src={BeerImg}
+                                              />
+                                            </Box>
                                 </div>
                             : (
                               <div>
+                                
                                 <Box sx={{ display: 'flex' ,flexDirection: 'column'   }}>
+                                <Box sx={{ p: 1 }}>
+                                              <Image                               
+                                                src={SpiritImg}
+                                              />
+                                            </Box>
                                   <Box sx={{ p: 1 }}>
                                   {/* <Form ref={brandSelectRef}>         
                                   <Form.Item name="brand" label=""  >
@@ -292,6 +256,7 @@ export default function MainPage() {
                               
                                   </Box>
                                 </Box>
+                                
                               </div>
                                 
                               )}

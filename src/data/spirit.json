@@ -1,0 +1,56 @@
+{
+    "booths": [
+      {
+        "booth_id": "A1",
+        "brands": ["TENAS", "PASUTARA", "TENA"]
+      },
+      {
+        "booth_id": "A2",
+        "brands": ["BARISTO", "RAINBOW"]
+      },
+      {
+        "booth_id": "A3",
+        "brands": ["สุราข้าวหอมชัยภูมิ", "อีสานรัม", "WHITE SHARK SUMMER BEACH"]
+      },
+      {
+        "booth_id": "A4",
+        "brands": ["โคโยตี้ ลำก้า"]
+      },
+      {
+        "booth_id": "A5",
+        "brands": ["PUR SPIRIT OF THAILAND", "ERAWAN", "SIAM GIN"]
+      },
+      {
+        "booth_id": "A6",
+        "brands": ["FURANO", "ตำนาน"]
+      },
+      {
+        "booth_id": "A7",
+        "brands": ["COB", "บรรเจิดเบียร์"]
+      },
+      {
+        "booth_id": "A8",
+        "brands": ["บำเรอ", "THAY", "ลุงนิด"]
+      },
+      {
+        "booth_id": "A9",
+        "brands": ["CHALONG BAY", "LANNA", "SANEHA"]
+      },
+      {
+        "booth_id": "A10",
+        "brands": ["SATO", "CONNOLLY"]
+      },
+      {
+        "booth_id": "A11",
+        "brands": ["TANODE", "NASAN"]
+      },
+      {
+        "booth_id": "A12",
+        "brands": ["สบายสบ๊าย", "จตุชีวา"]
+      },
+      {
+        "booth_id": "A13",
+        "brands": ["INTHONE BREWING", "HOPSTER", "CHONG"]
+      }
+    ]
+  }
