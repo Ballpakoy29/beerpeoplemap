@@ -85,7 +85,7 @@ export default function MainPage() {
                     sx={{
                       '& .MuiTab-root': {
                         fontWeight: 'bold',
-                        fontSize: '1.4rem',
+                        fontSize: '1.2rem',
                         fontFamily: 'Anuphan, sans-serif', 
                       },
                     }}
