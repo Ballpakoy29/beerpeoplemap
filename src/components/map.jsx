@@ -16,7 +16,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import AirportShuttleIcon from '@mui/icons-material/AirportShuttle';
 import imgCard from './../assets/event.png';
-import imgPromotion from './../assets/promotion1.png';
+import imgPromotion from './../assets/promotion2.png';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -62,17 +62,12 @@ export default function Map() {
             <Typography variant="body2" color="text.secondary" align="center">
                 เวลารับ-ส่ง 13.30 - 22.30 น.
             </Typography>
-            <Typography variant="body2" color="text.secondary" align="center">
-                 ..
-            </Typography>
-            <Typography variant="body2" color="text.secondary" align="center">
-                เมาไม่ขับ ให้ U Drink I Drive มาขับแทน ลดทันที 10% เพียงใส่โค้ด " BEERMARKET "
-            </Typography>
+
             </CardContent>
       <CardActions disableSpacing>
       </CardActions>
-    
     </Card>
+    <br></br>
     <Card >
       <CardHeader
         avatar={      
