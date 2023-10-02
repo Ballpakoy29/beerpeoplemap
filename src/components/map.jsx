@@ -38,6 +38,7 @@ export default function Map() {
 
   return (
    <div>
+    <br></br>
      <Card >
       <CardHeader
         avatar={      
