@@ -178,8 +178,8 @@ export default function MainPage() {
                                   <Form.Item name="brand" label=""  >
                                   <Select
                                                 size={"large"}
-                                                showSearch
-                                                allowClear ={true}
+                                                // showSearch
+                                                // allowClear ={true}
                                                 placeholder="เลือกตามแบรนด์"
                                                 optionFilterProp="children"
                                                 onChange={(value, option) => {
@@ -194,9 +194,9 @@ export default function MainPage() {
                                                   }
                                                 }}
                                                 style={{ width: '100%' }}
-                                                filterOption={(input, option) =>
-                                                  (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
-                                                }
+                                                // filterOption={(input, option) =>
+                                                //   (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
+                                                // }
                                                 options={spiritBrandDatas}
                                               />
                                           </Form.Item>   
