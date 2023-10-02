@@ -9,9 +9,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { Autocomplete } from '@mui/material';
-import Data from '../data/map_01';
-import Province from '../data/province.json'
-import CardBrand from './card';
+
+
 // import Select from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -26,6 +25,7 @@ import { Image } from 'antd';
 import SpiritImg from './../assets/spirit.png';
 import BeerImg from './../assets/beer.png';
 import spiritBrand from './../data/spirit.json';
+import beerBrand from './../data/beer.json';
 
 
 
@@ -46,13 +46,11 @@ const defaultTheme = createTheme();
 
 export default function MainPage() {
         const brandSelectRef = useRef(null);
-        const provinceSelectRef = useRef(null);
-        const sortedProvinces = Province.sort((a, b) => a.label.localeCompare(b.label));
+        
         const [menu, setMenu] = React.useState(1);
         const [brandDatas, setBrandDatas] = React.useState(null);
 
         const [txtBrand,setTxtBrand] = React.useState("");
-        const [txtProvince,setTxtProvince] = React.useState("");
         const [expanded, setExpanded] = React.useState(false);
 
         const [selectSpirit,setSelectSpirit] = React.useState(null);
@@ -74,12 +72,22 @@ export default function MainPage() {
               // อัปเดตข้อมูลใน spiritBrandDatas
               if (spiritBrand !== null) {
                 const spiritBrands = spiritBrand.booths.map((item) => ({
-                  value: item.brands,
+                  value: item.booth_id,
                   label: item.brands,
                 })).sort((a, b) => {
                   return a.label.localeCompare(b.label);
                 });
                 setSpiritBrandDatas(spiritBrands);
+              }
+
+              if (beerBrand !== null) {
+                const beerBrands = beerBrand.booths.map((item) => ({
+                  value: item.booth_id,
+                  label: item.brands,
+                })).sort((a, b) => {
+                  return a.label.localeCompare(b.label);
+                });
+                setBeerBrandDatas(beerBrands);
               }
             
         }
@@ -125,50 +133,47 @@ export default function MainPage() {
                               ) : 
                     menu === 2 ? 
                                 <div>
-                                    <Box sx={{ display: 'flex' ,flexDirection: 'column'   }}>
-                                            <Box sx={{ p: 1 }}>
-
-                                          {/* ยังไม่เลือกให้แสดงภาพ */}
-                                          
-
-                                            {/* <Form ref={brandSelectRef}>         
-                                            <Form.Item name="brand" label=""  >
-                                            <Select
-                                                          size={"large"}
-                                                      //   showSearch
-                                                          allowClear ={true}
-                                                          placeholder="เลือกตามแบรนด์"
-                                                          optionFilterProp="children"
-                                                          onChange={(value, option) => {
-                                                            if (option === undefined) {
-                                                              setTxtBrand(""); // Set the state to null when the "Clear" button is clicked
-                                                            } else {
-                                                              
-                                                              setTxtProvince("");
-                                                              setTxtBrand(value);
-                                                              if (provinceSelectRef.current) {
-                                                                provinceSelectRef.current.resetFields();
-                                                              }
-                                                            }
-                                                          }}
-                                                          style={{ width: '100%' }}
-                                                          // filterOption={(input, option) =>
-                                                          //   (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
-                                                          // }
-                                                          options={brandDatas}
-                                                        />
-                                                    </Form.Item>   
-                                                </Form> */}
-                                            </Box>
-                                          {/* <Beer></Beer>
-                                          <Beer></Beer>
-                                          <Beer></Beer> */}
-                                          </Box>
-                                          <Box sx={{ p: 1 }}>
-                                              <Image                               
-                                                src={BeerImg}
+                                  <Box sx={{ p: 1 }}>
+                                  <Form ref={brandSelectRef}>         
+                                  <Form.Item name="brand" label=""  >
+                                  <Select
+                                                size={"large"}
+                                                // showSearch
+                                                allowClear ={true}
+                                                placeholder="เลือกตามแบรนด์"
+                                                optionFilterProp="children"
+                                                onChange={(value, option) => { 
+                                                  if (option === undefined) {
+                                                    setSelectBeer(null);
+                                                  } else {     
+                                                    
+                                                    const filteredBrands = beerBrand.booths.filter((brandData) => {
+                                                      return brandData.booth_id === value;
+                                                    });
+                                                    console.log(filteredBrands) ;         
+                                                    setSelectBeer(filteredBrands);         
+                                                                       
+                                                  }
+                                                }}
+                                                style={{ width: '100%' }}
+                                                // filterOption={(input, option) =>
+                                                //   (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
+                                                // }
+                                                options={beerBrandDatas}
                                               />
-                                            </Box>
+                                          </Form.Item>   
+                                      </Form>
+                                  </Box>
+
+                                    {selectBeer  === null ?   <Box sx={{ p: 1 }}><Image  src={BeerImg} /> </Box> 
+                                    :
+                                    <Box sx={{ display: 'flex' ,flexDirection: 'column'   }}>
+                                    <Box sx={{ p: 1 }}>
+                                                เบียร์ 
+                                      </Box>
+                                    </Box>
+                                     }
+
                                 </div>
                             : ( // menu === 3
                               <div>       
@@ -179,18 +184,18 @@ export default function MainPage() {
                                   <Select
                                                 size={"large"}
                                                 // showSearch
-                                                // allowClear ={true}
+                                                 allowClear ={true}
                                                 placeholder="เลือกตามแบรนด์"
                                                 optionFilterProp="children"
                                                 onChange={(value, option) => {
                                                   if (option === undefined) {
-                                                    //setTxtBrand(""); // Set the state to null when the "Clear" button is clicked
-                                                  } else {                                 
-                                                    // setTxtProvince("");
-                                                    // setTxtBrand(value);
-                                                    // if (provinceSelectRef.current) {
-                                                    //   provinceSelectRef.current.resetFields();
-                                                    // }
+                                                    setSelectSpirit(null);
+                                                  } else {     
+                                                    const filteredBrands = spiritBrand.booths.filter((brandData) => {
+                                                      return brandData.booth_id === value;
+                                                    });                
+                                                    console.log(filteredBrands) ;                       
+                                                    setSelectSpirit(filteredBrands);                            
                                                   }
                                                 }}
                                                 style={{ width: '100%' }}
@@ -203,72 +208,15 @@ export default function MainPage() {
                                       </Form>
                                   </Box>
 
-                                <Box sx={{ display: 'flex' ,flexDirection: 'column'   }}>
-                                <Box sx={{ p: 1 }}>
-                                              <Image                               
-                                                src={SpiritImg}
-                                              />
-                                            </Box>
-                   
-                                  <Box sx={{ p: 1 }}>
-                                  {/* <Form ref={provinceSelectRef}>         
-                                  <Form.Item name="province" label=""  >
-                                  <Select
-                                                size={"large"}
-                                              // showSearch
-                                                allowClear ={true}
-                                                placeholder="เลือกตามจังหวัด"
-                                                optionFilterProp="children"
-                                                onChange={(value, option) => {
-                                                  if (option === undefined) {
-                                                    setTxtProvince(""); // Set the state to null when the "Clear" button is clicked
-                                                  } else {
-                                                    setTxtBrand("");
-                                                    setTxtProvince(value);
-                                                    if (brandSelectRef.current) {
-                                                      brandSelectRef.current.resetFields();
-                                                    }
-                                                  }
-                                                }}
-                                                style={{ width: '100%' }}
-                                                filterOption={(input, option) =>
-                                                  (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
-                                                }
-                                                options={sortedProvinces}
-                                              />
-                                        </Form.Item>
-                                        </Form> */}
-                                  </Box>
-                                  <Box sx={{ p: 2, flexGrow: 1, overflow: 'scroll', height : '80vh'  }}>
-                                    {/* { Data.filter((data) => {
-                                        if (txtBrand === "" && txtProvince === "") {
-                                          return true; // Show all data if brand and province are empty
-                                        } else if (txtBrand === "") {
-                                          return data.province === (txtProvince); // Filter by partial match for province if brand is empty
-                                        } else if (txtProvince === "") {
-                                          return data.brand === (txtBrand); // Filter by partial match for brand if province is empty
-                                        } else {
-                                          return (
-                                            data.Brand === (txtBrand) && data.province === (txtProvince)
-                                          ); // Filter by partial match for both brand and province
-                                        }
-                                      }).map((element, index) => (
-                                        <CardBrand 
-                                        {...element} 
-                                        key={index}
-                                          // sx={{
-                                          //   width: '100%',
-                                          //   marginBottom: '10px',
-                                          //   '& .MuiTypography-root': {
-                                          //     fontSize: '14px',
-                                          //   },
-                                          // }}
-                                        />
-                                  )) } */}
-                              
-                                  </Box>
-                                </Box>
-                                
+                               
+                                  {selectSpirit  === null ?   <Box sx={{ p: 1 }}><Image  src={SpiritImg} /> </Box> 
+                                    :
+                                    <Box sx={{ display: 'flex' ,flexDirection: 'column'   }}>
+                                    <Box sx={{ p: 1 }}>
+                                                เหล้า
+                                      </Box>
+                                    </Box>
+                                     }
                               </div>
                                 
                               )}
