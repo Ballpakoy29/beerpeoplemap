@@ -14,6 +14,8 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import AirportShuttleIcon from '@mui/icons-material/AirportShuttle';
+import imgCard from './../assets/sirinthon.png';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -36,23 +38,19 @@ export default function Map() {
   return (
     <Card >
       <CardHeader
-        avatar={
+        avatar={      
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
+                     <AirportShuttleIcon></AirportShuttleIcon>
           </Avatar>
         }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+
+        title="บริการรถรับส่งฟรี MRT สิรินธร - ช่างชุ่ย"
+        subheader="7-8 ตุลาคม 2566"
       />
       <CardMedia
         component="img"
         height="194"
-        image="/static/images/cards/paella.jpg"
+        image={imgCard}
         alt="Paella dish"
       />
       <CardContent>
