@@ -25,6 +25,7 @@ import Beer from './beer';
 import { Image } from 'antd';
 import SpiritImg from './../assets/spirit.png';
 import BeerImg from './../assets/beer.png';
+import spiritBrand from './../data/spirit.json';
 
 
 
@@ -54,22 +55,32 @@ export default function MainPage() {
         const [txtProvince,setTxtProvince] = React.useState("");
         const [expanded, setExpanded] = React.useState(false);
 
+        const [selectSpirit,setSelectSpirit] = React.useState(null);
+        const [selectBeer,setSelectBeer] = React.useState(null);
+
+        const [spiritBrandDatas, setSpiritBrandDatas] = React.useState(null);
+        const [beerBrandDatas, setBeerBrandDatas] = React.useState(null);
+
         const handleExpandClick = () => {
           setExpanded(!expanded);
         };
         const handleChange = (event, newValue) => {
-          setTxtBrand("");
-          setTxtProvince("");
+          //setTxtBrand("");
+         // setTxtProvince("");
           setMenu(newValue);
         };
 
         useEffect(()=>{
-                if(Data !== null){
-                  setBrandDatas(Data.map((item) => ({
-                    value: item.brand,
-                    label: item.brand,
-                  })).sort((a, b) => a.label.localeCompare(b.label)))
-                }
+              // อัปเดตข้อมูลใน spiritBrandDatas
+              if (spiritBrand !== null) {
+                const spiritBrands = spiritBrand.booths.map((item) => ({
+                  value: item.brands,
+                  label: item.brands,
+                })).sort((a, b) => {
+                  return a.label.localeCompare(b.label);
+                });
+                setSpiritBrandDatas(spiritBrands);
+              }
             
         }
         ,[])
@@ -159,45 +170,46 @@ export default function MainPage() {
                                               />
                                             </Box>
                                 </div>
-                            : (
-                              <div>
-                                
+                            : ( // menu === 3
+                              <div>       
+
+                                  <Box sx={{ p: 1 }}>
+                                  <Form ref={brandSelectRef}>         
+                                  <Form.Item name="brand" label=""  >
+                                  <Select
+                                                size={"large"}
+                                                showSearch
+                                                allowClear ={true}
+                                                placeholder="เลือกตามแบรนด์"
+                                                optionFilterProp="children"
+                                                onChange={(value, option) => {
+                                                  if (option === undefined) {
+                                                    //setTxtBrand(""); // Set the state to null when the "Clear" button is clicked
+                                                  } else {                                 
+                                                    // setTxtProvince("");
+                                                    // setTxtBrand(value);
+                                                    // if (provinceSelectRef.current) {
+                                                    //   provinceSelectRef.current.resetFields();
+                                                    // }
+                                                  }
+                                                }}
+                                                style={{ width: '100%' }}
+                                                filterOption={(input, option) =>
+                                                  (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
+                                                }
+                                                options={spiritBrandDatas}
+                                              />
+                                          </Form.Item>   
+                                      </Form>
+                                  </Box>
+
                                 <Box sx={{ display: 'flex' ,flexDirection: 'column'   }}>
                                 <Box sx={{ p: 1 }}>
                                               <Image                               
                                                 src={SpiritImg}
                                               />
                                             </Box>
-                                  <Box sx={{ p: 1 }}>
-                                  {/* <Form ref={brandSelectRef}>         
-                                  <Form.Item name="brand" label=""  >
-                                  <Select
-                                                size={"large"}
-                                            //   showSearch
-                                                allowClear ={true}
-                                                placeholder="เลือกตามแบรนด์"
-                                                optionFilterProp="children"
-                                                onChange={(value, option) => {
-                                                  if (option === undefined) {
-                                                    setTxtBrand(""); // Set the state to null when the "Clear" button is clicked
-                                                  } else {
-                                                    
-                                                    setTxtProvince("");
-                                                    setTxtBrand(value);
-                                                    if (provinceSelectRef.current) {
-                                                      provinceSelectRef.current.resetFields();
-                                                    }
-                                                  }
-                                                }}
-                                                style={{ width: '100%' }}
-                                                // filterOption={(input, option) =>
-                                                //   (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
-                                                // }
-                                                options={brandDatas}
-                                              />
-                                          </Form.Item>   
-                                      </Form> */}
-                                  </Box>
+                   
                                   <Box sx={{ p: 1 }}>
                                   {/* <Form ref={provinceSelectRef}>         
                                   <Form.Item name="province" label=""  >
@@ -260,7 +272,7 @@ export default function MainPage() {
                               </div>
                                 
                               )}
-                              <Box sx={{ p: 2 }}>
+                        <Box sx={{ p: 2 }}>
                       <Copyright></Copyright>
                     </Box>
                   </Box>
