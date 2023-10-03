@@ -16,7 +16,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import AirportShuttleIcon from '@mui/icons-material/AirportShuttle';
 import imgCard from './../assets/event.png';
-import imgPromotion from './../assets/promotion1.png';
+import imgPromotion from './../assets/promotion2.png';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -38,6 +38,44 @@ export default function Map() {
 
   return (
    <div>
+
+    <br></br>
+    <Card >
+      <CardHeader
+        avatar={      
+          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+                     <AirportShuttleIcon></AirportShuttleIcon>
+          </Avatar>
+        }
+
+        title="โปรโมชั่น"
+        subheader="7-8 ตุลาคม 2566"
+      />
+      <CardMedia
+        component="img"
+        height="194"
+        image={imgPromotion}
+        alt="Paella dish"
+      />
+            <CardContent>
+            <Typography variant="body2" color="text.secondary" align="center">
+            งานนี้รอทุกท่านมาลิ้มลองรสชาติของเบียร์ชนิดต่างๆมากมาย ชิมจนหนำใจไม่ต้องกังวลถ้าขับรถกลับไม่ไหว
+            </Typography>
+            <Typography variant="body2" color="text.secondary" align="center">
+            เรามี U drink I drive มาขับแทน พาทุกคนกลับบ้านอย่างปลอดภัย
+            </Typography>
+            <Typography variant="body2" color="text.secondary" align="center">
+            แค่ใส่โค้ด "BEERMARKET" ก็ลดทันทีไปเลย 10% 
+            </Typography>           
+            <Typography variant="body2" color="text.secondary" align="center">
+            เรียกผ่านแอป U drink I drive หรือ โทรเรียกใช้บริการที่ 09108-09108 
+            </Typography>
+            </CardContent>
+      <CardActions disableSpacing>
+      </CardActions>
+    
+    </Card>
+
     <br></br>
      <Card >
       <CardHeader
@@ -67,39 +105,6 @@ export default function Map() {
             </CardContent>
       <CardActions disableSpacing>
       </CardActions>
-    </Card>
-    <br></br>
-    <Card >
-      <CardHeader
-        avatar={      
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                     <AirportShuttleIcon></AirportShuttleIcon>
-          </Avatar>
-        }
-
-        title="โปรโมชั่น"
-        subheader="7-8 ตุลาคม 2566"
-      />
-      <CardMedia
-        component="img"
-        height="194"
-        image={imgPromotion}
-        alt="Paella dish"
-      />
-            <CardContent>
-            <Typography variant="body2" color="text.secondary" align="center">
-                เมาไม่ขับ ให้ U Drink I Drive มาขับแทน 
-            </Typography>
-            <Typography variant="body2" color="text.secondary" align="center">
-              ลดทันที 10% 
-            </Typography>
-            <Typography variant="body2" color="text.secondary" align="center">
-            เพียงใส่โค้ด " BEERMARKET "
-            </Typography>
-            </CardContent>
-      <CardActions disableSpacing>
-      </CardActions>
-    
     </Card>
    </div>
 

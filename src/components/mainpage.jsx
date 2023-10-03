@@ -26,7 +26,7 @@ import SpiritImg from './../assets/spirit.png';
 import BeerImg from './../assets/beer.png';
 import spiritBrand from './../data/spirit.json';
 import beerBrand from './../data/beer.json';
-
+import { Tooltip } from 'antd';
 
 
 function Copyright(props) {
@@ -133,7 +133,7 @@ export default function MainPage() {
                               ) : 
                     menu === 2 ? 
                                 <div>
-                                  <Box sx={{ p: 1 }}>
+                                  <Box sx={{ p: 1 } }>  
                                   <Form ref={brandSelectRef}>         
                                   <Form.Item name="brand" label=""  >
                                   <Select
@@ -161,8 +161,12 @@ export default function MainPage() {
                                                 // }
                                                 options={beerBrandDatas}
                                               />
-                                          </Form.Item>   
+                                              
+                                          </Form.Item>                                            
                                       </Form>
+                                      {/* <Button type="primary" danger shape="circle" onClick={()=>setSelectBeer(null)} >
+                                        X
+                                      </Button> */}
                                   </Box>
 
                                     {selectBeer  === null ?   <Box sx={{ p: 1 }}><Image  src={BeerImg} /> </Box> 
@@ -206,6 +210,9 @@ export default function MainPage() {
                                               />
                                           </Form.Item>   
                                       </Form>
+                                      {/* <Button type="primary" danger shape="circle" onClick={()=>setSelectSpirit(null)} >
+                                        X
+                                      </Button> */}
                                   </Box>
 
                                
