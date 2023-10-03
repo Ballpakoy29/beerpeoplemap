@@ -25,10 +25,10 @@ const imageMap = {
   'สุราข้าวหอมชัยภูมิ' : สุราข้าวหอมชัยภูมิ,
   'อีสานรัม' : อีสานรัม,
   'WHITE_SHARK_SUMMER_BEACH' : WHITE_SHARK_SUMMER_BEACH,
-  โคโยตี้_ลำก้า : โคโยตี้_ลำก้า,
-  PUR_SPIRIT_OF_THAILAND : PUR_SPIRIT_OF_THAILAND,
-  SIAM_GIN : SIAM_GIN,
-  ERAWAN : ERAWAN
+  'โคโยตี้_ลำก้า' : โคโยตี้_ลำก้า,
+  'PUR_SPIRIT_OF_THAILAND' : PUR_SPIRIT_OF_THAILAND,
+  'SIAM_GIN' : SIAM_GIN,
+  'ERAWAN' : ERAWAN
 };
 
 const Beer = (props) => {
