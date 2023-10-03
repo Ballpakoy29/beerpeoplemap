@@ -38,45 +38,7 @@ export default function Map() {
 
   return (
    <div>
-
-    <br></br>
-    <Card >
-      <CardHeader
-        avatar={      
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                     <AirportShuttleIcon></AirportShuttleIcon>
-          </Avatar>
-        }
-
-        title="โปรโมชั่น"
-        subheader="7-8 ตุลาคม 2566"
-      />
-      <CardMedia
-        component="img"
-        height="194"
-        image={imgPromotion}
-        alt="Paella dish"
-      />
-            <CardContent>
-            <Typography variant="body2" color="text.secondary" align="center">
-            งานนี้รอทุกท่านมาลิ้มลองรสชาติของเบียร์ชนิดต่างๆมากมาย ชิมจนหนำใจไม่ต้องกังวลถ้าขับรถกลับไม่ไหว
-            </Typography>
-            <Typography variant="body2" color="text.secondary" align="center">
-            เรามี U drink I drive มาขับแทน พาทุกคนกลับบ้านอย่างปลอดภัย
-            </Typography>
-            <Typography variant="body2" color="text.secondary" align="center">
-            แค่ใส่โค้ด "BEERMARKET" ก็ลดทันทีไปเลย 10% 
-            </Typography>           
-            <Typography variant="body2" color="text.secondary" align="center">
-            เรียกผ่านแอป U drink I drive หรือ โทรเรียกใช้บริการที่ 09108-09108 
-            </Typography>
-            </CardContent>
-      <CardActions disableSpacing>
-      </CardActions>
-    
-    </Card>
-
-    <br></br>
+ <br></br>
      <Card >
       <CardHeader
         avatar={      
@@ -106,6 +68,44 @@ export default function Map() {
       <CardActions disableSpacing>
       </CardActions>
     </Card>
+    <br></br>
+    <Card >
+      <CardHeader
+        avatar={      
+          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+                     <AirportShuttleIcon></AirportShuttleIcon>
+          </Avatar>
+        }
+
+        title="โปรโมชั่น"
+        subheader="7-8 ตุลาคม 2566"
+      />
+      <CardMedia
+        component="img"
+        height="194"
+        image={imgPromotion}
+        alt="Paella dish"
+      />
+            <CardContent>
+            <Typography variant="body2" color="text.secondary" align="center">
+            งานนี้รอทุกท่านมาลิ้มลองรสชาติของเบียร์ชนิดต่างๆมากมาย ชิมจนหนำใจไม่ต้องกังวลถ้าขับรถกลับไม่ไหว
+            </Typography>
+            <Typography variant="body2" color="text.secondary" align="center">
+            เรามี U drink I drive มาขับแทน พาทุกคนกลับบ้านอย่างปลอดภัย
+            </Typography>
+            <Typography variant="body2" color="text.secondary" align="center">
+            แค่ใส่โค้ด "BEERMARKET" ก็ลดทันทีไปเลย 10% 
+            </Typography>           
+            <Typography variant="body2" color="text.secondary" align="center">
+            เรียกผ่านแอป U drink I drive หรือ โทรเรียกใช้บริการที่ 091-0809108 
+            </Typography>
+            </CardContent>
+      <CardActions disableSpacing>
+      </CardActions>
+    
+    </Card>
+
+   
    </div>
 
     
