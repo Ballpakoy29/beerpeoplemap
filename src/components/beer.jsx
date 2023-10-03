@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import PASUTARA from './../assets/PASUTARA.jpg';
 import TENA from './../assets/TENA.jpg';
 import TENAS from './../assets/TENAS.jpg';
-import BARISTO from './../assets/BARISTO.jpg';
+
 import RAINBOW from './../assets/RAINBOW.jpg';
 import สุราข้าวหอมชัยภูมิ from './../assets/สุราข้าวหอมชัยภูมิ.jpg';
 import อีสานรัม from './../assets/อีสานรัม.jpg';
@@ -20,7 +20,7 @@ const imageMap = {
   'PASUTARA': PASUTARA,
   'TENA': TENA,
   'TENAS': TENAS,
-  'BARISTO': BARISTO,
+
   'RAINBOW': RAINBOW,
   'สุราข้าวหอมชัยภูมิ' : สุราข้าวหอมชัยภูมิ,
   'อีสานรัม' : อีสานรัม,
