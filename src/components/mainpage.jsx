@@ -248,8 +248,7 @@ export default function MainPage() {
                                     :
                                     <Box sx={{ display: 'flex' ,flexDirection: 'column'   }}>
                                       <div key={refreshKey2} >
-                                    <Box sx={{ display: 'flex', flexDirection: 'row', overflow: 'auto' }}>
-                                        
+                                    <Box sx={{ display: 'flex', flexDirection: 'row', overflow: 'auto' }}>                                       
                                             {selectSpirit.map((item) => (
                                                 <Beer key={item.booth_id} items={item} />
                                             ))}
