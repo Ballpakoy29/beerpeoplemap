@@ -58,11 +58,13 @@ export default function Map() {
       />
             <CardContent>
             <Typography variant="body2" color="text.secondary" align="center">
-                บริการรถรับส่งฟรี MRT สิรินธร ทางออก 3A
+                บริการรถรับส่งฟรี MRT สิรินธร ทางออก 3A - ช่างชุ่ย ประตู 1
+                บริการรถรับส่งฟรี ช่างชุ่ย ประตู 1 - MRT สิรินธร ทางออก 3A
             </Typography>
             <Typography variant="body2" color="text.secondary" align="center">
                 เวลารับ-ส่ง 13.30 - 22.30 น.
             </Typography>
+
 
             </CardContent>
       <CardActions disableSpacing>
@@ -99,6 +101,10 @@ export default function Map() {
             <Typography variant="body2" color="text.secondary" align="center">
             เรียกผ่านแอป U drink I drive หรือ โทรเรียกใช้บริการที่ 091-0809108 
             </Typography>
+            <Typography variant="body2" color="text.secondary" align="center">
+            091-0809108 
+            </Typography>
+
             </CardContent>
       <CardActions disableSpacing>
       </CardActions>
