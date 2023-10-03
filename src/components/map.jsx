@@ -66,12 +66,17 @@ export default function Map() {
                 
             </Typography>
             <Typography variant="body2" color="text.secondary" align="center">
+                :
+            </Typography>
+            <Typography variant="body2" color="text.secondary" align="center">
             บริการรถรับส่งฟรี ช่างชุ่ย ประตู 1 - MRT สิรินธร ทางออก 3A
             </Typography>
             <Typography variant="body2" color="text.secondary" align="center">
                 เวลารับ-ส่ง 18.00 - 22.30 น.
             </Typography>
-
+            <Typography variant="body2" color="text.secondary" align="center">
+                :
+            </Typography>
 
             <Typography variant="body2" color="text.secondary" align="center">
             หรือลงสถานีรถไฟฟ้า บางบำหรุ ต่อวินมอไซต์มาเลย งานนี้รอทุกท่านมาลิ้มลองรสชาติของเบียร์ชนิดต่างๆมากมาย 

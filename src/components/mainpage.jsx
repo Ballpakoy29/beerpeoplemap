@@ -65,7 +65,11 @@ export default function MainPage() {
         const handleChange = (event, newValue) => {
           //setTxtBrand("");
          // setTxtProvince("");
+         
+          setSelectBeer(null);
+          setSelectSpirit(null);
           setMenu(newValue);
+          brandSelectRef.current.resetFields();
         };
 
         useEffect(()=>{
@@ -101,6 +105,7 @@ export default function MainPage() {
           setRefreshKey2(Date.now() + Math.random());
         }, [selectSpirit]);
 
+
             return (
           <ThemeProvider theme={defaultTheme}>
              <CssBaseline />
@@ -115,7 +120,7 @@ export default function MainPage() {
                     sx={{
                       '& .MuiTab-root': {
                         fontWeight: 'bold',
-                        fontSize: '1.0rem',
+                        fontSize: '0.8rem',
                         fontFamily: 'Anuphan, sans-serif', 
                       },
                     }}
@@ -186,13 +191,13 @@ export default function MainPage() {
 
                                     {selectBeer  === null ?   <Box sx={{ p: 1 }}><Image  src={BeerImg} /> </Box> 
                                     :
-                                    <Box sx={{ display: 'flex', flexDirection: 'row', overflow: 'auto' }}>
-                                        <div key={refreshKey} >
+                                    <div key={refreshKey} >
+                                    <Box sx={{ display: 'flex', flexDirection: 'row', overflow: 'auto'}}>                                 
                                             {selectBeer.map((item) => (
                                                 <Beer key={item.booth_id} items={item} />
                                             ))}
-                                        </div>
                                     </Box>
+                                    </div>
                                      }
 
                                 </div>
@@ -242,13 +247,15 @@ export default function MainPage() {
                                   {selectSpirit  === null ?   <Box sx={{ p: 1 }}><Image  src={SpiritImg} /> </Box> 
                                     :
                                     <Box sx={{ display: 'flex' ,flexDirection: 'column'   }}>
+                                      <div key={refreshKey2} >
                                     <Box sx={{ display: 'flex', flexDirection: 'row', overflow: 'auto' }}>
-                                        <div key={refreshKey2} >
+                                        
                                             {selectSpirit.map((item) => (
                                                 <Beer key={item.booth_id} items={item} />
                                             ))}
-                                        </div>
+                                        
                                     </Box>
+                                    </div>
                                     </Box>
                                      }
                               </div>
