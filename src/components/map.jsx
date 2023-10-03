@@ -99,7 +99,7 @@ export default function Map() {
             แค่ใส่โค้ด "BEERMARKET" ก็ลดทันทีไปเลย 10% 
             </Typography>           
             <Typography variant="body2" color="text.secondary" align="center">
-            เรียกผ่านแอป U drink I drive หรือ โทรเรียกใช้บริการที่ 091-0809108 
+            เรียกผ่านแอป U drink I drive หรือ โทรเรียกใช้บริการที่ 
             </Typography>
             <Typography variant="body2" color="text.secondary" align="center">
             091-0809108 

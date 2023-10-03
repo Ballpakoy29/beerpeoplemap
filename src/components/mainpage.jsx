@@ -115,7 +115,7 @@ export default function MainPage() {
                   <Tab value={1} label="การเดินทาง" />
                   <Tab value={2} label="เบียร์ประชาชน" />
                   <Tab value={3} label="สุราประชาชน" />
-                 
+                  <Tab value={4} label="กิจกรรม" />
 
                 </Tabs>
               </Box>
