@@ -59,13 +59,23 @@ export default function Map() {
             <CardContent>
             <Typography variant="body2" color="text.secondary" align="center">
                 บริการรถรับส่งฟรี MRT สิรินธร ทางออก 3A - ช่างชุ่ย ประตู 1
-                บริการรถรับส่งฟรี ช่างชุ่ย ประตู 1 - MRT สิรินธร ทางออก 3A
+                
             </Typography>
             <Typography variant="body2" color="text.secondary" align="center">
                 เวลารับ-ส่ง 13.30 - 22.30 น.
+                
+            </Typography>
+            <Typography variant="body2" color="text.secondary" align="center">
+            บริการรถรับส่งฟรี ช่างชุ่ย ประตู 1 - MRT สิรินธร ทางออก 3A
+            </Typography>
+            <Typography variant="body2" color="text.secondary" align="center">
+                เวลารับ-ส่ง 18.00 - 22.30 น.
             </Typography>
 
 
+            <Typography variant="body2" color="text.secondary" align="center">
+            หรือลงสถานีรถไฟฟ้า บางบำหรุ ต่อวินมอไซต์มาเลย งานนี้รอทุกท่านมาลิ้มลองรสชาติของเบียร์ชนิดต่างๆมากมาย 
+            </Typography>
             </CardContent>
       <CardActions disableSpacing>
       </CardActions>

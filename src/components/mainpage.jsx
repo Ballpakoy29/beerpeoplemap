@@ -59,9 +59,9 @@ export default function MainPage() {
         const [spiritBrandDatas, setSpiritBrandDatas] = React.useState(null);
         const [beerBrandDatas, setBeerBrandDatas] = React.useState(null);
 
-        const handleExpandClick = () => {
-          setExpanded(!expanded);
-        };
+        const [refreshKey, setRefreshKey] = useState(Date.now() + Math.random());
+        const [refreshKey2, setRefreshKey2] = useState(Date.now() + Math.random());
+
         const handleChange = (event, newValue) => {
           //setTxtBrand("");
          // setTxtProvince("");
@@ -72,7 +72,7 @@ export default function MainPage() {
               // อัปเดตข้อมูลใน spiritBrandDatas
               if (spiritBrand !== null) {
                 const spiritBrands = spiritBrand.booths.map((item) => ({
-                  value: item.booth_id,
+                  value: item.brands,
                   label: item.brands,
                 })).sort((a, b) => {
                   return a.label.localeCompare(b.label);
@@ -82,7 +82,7 @@ export default function MainPage() {
 
               if (beerBrand !== null) {
                 const beerBrands = beerBrand.booths.map((item) => ({
-                  value: item.booth_id,
+                  value: item.brands,
                   label: item.brands,
                 })).sort((a, b) => {
                   return a.label.localeCompare(b.label);
@@ -92,6 +92,14 @@ export default function MainPage() {
             
         }
         ,[])
+
+        useEffect(() => {
+          setRefreshKey(Date.now() + Math.random());
+        }, [selectBeer]);
+        
+        useEffect(() => {
+          setRefreshKey2(Date.now() + Math.random());
+        }, [selectSpirit]);
 
             return (
           <ThemeProvider theme={defaultTheme}>
@@ -107,7 +115,7 @@ export default function MainPage() {
                     sx={{
                       '& .MuiTab-root': {
                         fontWeight: 'bold',
-                        fontSize: '1.2rem',
+                        fontSize: '1.0rem',
                         fontFamily: 'Anuphan, sans-serif', 
                       },
                     }}
@@ -146,12 +154,19 @@ export default function MainPage() {
                                                   if (option === undefined) {
                                                     setSelectBeer(null);
                                                   } else {     
-                                                    
-                                                    const filteredBrands = beerBrand.booths.filter((brandData) => {
-                                                      return brandData.booth_id === value;
+                                                    //เอาเลข ID มาเช็คกับข้อมูลที่มีอยู่ใน beerBrand
+                                                    const filteredBrands = beerBrand.booths.filter((item) => {
+                                                      return item.brands === value;
+
                                                     });
-                                                    console.log(filteredBrands) ;         
-                                                    setSelectBeer(filteredBrands);         
+
+                                                     // Assuming you have an array called allBooths
+                                                  const furtherFiltered = beerBrand.booths.filter(booth => {
+                                                    return filteredBrands.some(filteredBrand => filteredBrand.booth_id === booth.booth_id);
+                                                  });
+       
+                                                    console.log(furtherFiltered) ;         
+                                                    setSelectBeer(furtherFiltered);         
                                                                        
                                                   }
                                                 }}
@@ -171,10 +186,12 @@ export default function MainPage() {
 
                                     {selectBeer  === null ?   <Box sx={{ p: 1 }}><Image  src={BeerImg} /> </Box> 
                                     :
-                                    <Box sx={{ display: 'flex' ,flexDirection: 'column'   }}>
-                                    <Box sx={{ p: 1 }}>
-                                                เบียร์ 
-                                      </Box>
+                                    <Box sx={{ display: 'flex', flexDirection: 'row', overflow: 'auto' }}>
+                                        <div key={refreshKey} >
+                                            {selectBeer.map((item) => (
+                                                <Beer key={item.booth_id} items={item} />
+                                            ))}
+                                        </div>
                                     </Box>
                                      }
 
@@ -195,11 +212,17 @@ export default function MainPage() {
                                                   if (option === undefined) {
                                                     setSelectSpirit(null);
                                                   } else {     
-                                                    const filteredBrands = spiritBrand.booths.filter((brandData) => {
-                                                      return brandData.booth_id === value;
-                                                    });                
+                                                       //เอาเลข ID มาเช็คกับข้อมูลที่มีอยู่ใน beerBrand
+                                                       const filteredBrands = spiritBrand.booths.filter((item) => {
+                                                        return item.brands === value;
+                                                      });
+                                                       // Assuming you have an array called allBooths
+                                                    const furtherFiltered = spiritBrand.booths.filter(booth => {
+                                                      return filteredBrands.some(filteredBrand => filteredBrand.booth_id === booth.booth_id);
+                                                    });
+          
                                                     console.log(filteredBrands) ;                       
-                                                    setSelectSpirit(filteredBrands);                            
+                                                    setSelectSpirit(furtherFiltered);                            
                                                   }
                                                 }}
                                                 style={{ width: '100%' }}
@@ -219,9 +242,13 @@ export default function MainPage() {
                                   {selectSpirit  === null ?   <Box sx={{ p: 1 }}><Image  src={SpiritImg} /> </Box> 
                                     :
                                     <Box sx={{ display: 'flex' ,flexDirection: 'column'   }}>
-                                    <Box sx={{ p: 1 }}>
-                                                เหล้า
-                                      </Box>
+                                    <Box sx={{ display: 'flex', flexDirection: 'row', overflow: 'auto' }}>
+                                        <div key={refreshKey2} >
+                                            {selectSpirit.map((item) => (
+                                                <Beer key={item.booth_id} items={item} />
+                                            ))}
+                                        </div>
+                                    </Box>
                                     </Box>
                                      }
                               </div>
