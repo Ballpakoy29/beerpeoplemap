@@ -28,6 +28,8 @@ import spiritBrand from './../data/spirit.json';
 import beerBrand from './../data/beer.json';
 import { Tooltip } from 'antd';
 
+import mapAll from './../assets/map_all.png';
+
 
 function Copyright(props) {
   return (
@@ -191,6 +193,7 @@ export default function MainPage() {
 
                                     {selectBeer  === null ?   <Box sx={{ p: 1 }}><Image  src={BeerImg} /> </Box> 
                                     :
+                                    <Box sx={{ display: 'flex' ,flexDirection: 'column'   }}>
                                     <div key={refreshKey} >
                                     <Box sx={{ display: 'flex', flexDirection: 'row', overflow: 'auto',  gap: 2 }}>                                 
                                             {selectBeer.map((item) => (
@@ -198,9 +201,12 @@ export default function MainPage() {
                                             ))}
                                     </Box>
                                     </div>
+                                    <Image  src={mapAll} /> 
+                                    </Box>
                                      }
-
+                                
                                 </div>
+                                
                             : ( // menu === 3
                               <div>       
 
@@ -255,6 +261,7 @@ export default function MainPage() {
                                         
                                     </Box>
                                     </div>
+                                    <Image  src={mapAll} /> 
                                     </Box>
                                      }
                               </div>
