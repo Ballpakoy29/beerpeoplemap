@@ -79,7 +79,10 @@ export default function Map() {
             </Typography>
 
             <Typography variant="body2" color="text.secondary" align="center">
-            หรือลงสถานีรถไฟฟ้า บางบำหรุ ต่อวินมอไซต์มาเลย(อันนี้ไม่ฟรีนะ)
+            หรือลงสถานีรถไฟฟ้า บางบำหรุ ต่อวินมอไซต์มาเลย
+            </Typography>
+            <Typography variant="body2" color="text.secondary" align="center">
+            (อันนี้ไม่ฟรีนะ)
             </Typography>
             </CardContent>
       <CardActions disableSpacing>
