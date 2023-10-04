@@ -5,7 +5,8 @@ import Typography from '@mui/material/Typography';
 // import TENA from './../assets/TENA.jpg';
 // import TENAS from './../assets/TENAS.jpg';
 
-import RAINBOW from './../assets/RAINBOW.jpg';
+// import RAINBOW from './../assets/RAINBOW.jpg';
+import imgPromotion from './../assets/promotion2.png';
 // import สุราข้าวหอมชัยภูมิ from './../assets/สุราข้าวหอมชัยภูมิ.jpg';
 // import อีสานรัม from './../assets/อีสานรัม.jpg';
 // import WHITE_SHARK_SUMMER_BEACH from './../assets/WHITE_SHARK_SUMMER_BEACH.jpg';
@@ -38,7 +39,7 @@ const Beer = (props) => {
       <Card
         hoverable
         style={{ width: 240 }}
-        cover={<img alt="example" src={RAINBOW} />}
+        cover={<img alt="example" src={imgPromotion} />}
       >
         <Meta title={`[${props.items.booth_id}] - ${props.items.brands}`} description={`[${props.items.booth_id}] - ${props.items.brands}`} />
       </Card>
