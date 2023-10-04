@@ -9,7 +9,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { Autocomplete } from '@mui/material';
-
+import drew from './../assets/drew.jpg';
 
 // import Select from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
@@ -130,7 +130,7 @@ export default function MainPage() {
                   <Tab value={1} label="การเดินทาง" />
                   <Tab value={2} label="เบียร์ประชาชน" />
                   <Tab value={3} label="สุราประชาชน" />
-                  <Tab value={4} label="กิจกรรม" />
+                  <Tab value={4} label="ยืนเดี่ยว" />
 
                 </Tabs>
               </Box>
@@ -207,7 +207,8 @@ export default function MainPage() {
                                 
                                 </div>
                                 
-                            : ( // menu === 3
+                            : 
+                            menu === 3 ? 
                               <div>       
 
                                   <Box sx={{ p: 1 }}>
@@ -265,8 +266,12 @@ export default function MainPage() {
                                     </Box>
                                      }
                               </div>
-                                
-                              )}
+            
+                              : <div>
+                                    <Box sx={{ display: 'flex' ,flexDirection: 'column' , gap:5 }}>
+                                             <Image  src={drew} /> 
+                                    </Box>
+                                </div>}
                         <Box sx={{ p: 2 }}>
                       <Copyright></Copyright>
                     </Box>
