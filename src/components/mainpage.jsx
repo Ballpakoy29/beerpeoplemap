@@ -192,7 +192,7 @@ export default function MainPage() {
                                     {selectBeer  === null ?   <Box sx={{ p: 1 }}><Image  src={BeerImg} /> </Box> 
                                     :
                                     <div key={refreshKey} >
-                                    <Box sx={{ display: 'flex', flexDirection: 'row', overflow: 'auto'}}>                                 
+                                    <Box sx={{ display: 'flex', flexDirection: 'row', overflow: 'auto',  gap: 2 }}>                                 
                                             {selectBeer.map((item) => (
                                                 <Beer key={item.booth_id} items={item} />
                                             ))}
@@ -248,7 +248,7 @@ export default function MainPage() {
                                     :
                                     <Box sx={{ display: 'flex' ,flexDirection: 'column'   }}>
                                       <div key={refreshKey2} >
-                                    <Box sx={{ display: 'flex', flexDirection: 'row', overflow: 'auto' }}>                                       
+                                    <Box sx={{ display: 'flex', flexDirection: 'row', overflow: 'auto' ,  gap: 2 } }>                                       
                                             {selectSpirit.map((item) => (
                                                 <Beer key={item.booth_id} items={item} />
                                             ))}

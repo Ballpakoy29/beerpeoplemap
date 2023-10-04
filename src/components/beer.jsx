@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card } from 'antd';
+import  './card.css';
 import Typography from '@mui/material/Typography';
 import a1_2 from './../assets/a1_2.png'
 import a1_3 from './../assets/a1_3.png';
@@ -39,13 +40,13 @@ const Beer = (props) => {
   const imageSrc = imageMap[props.items.brands.replace(/\s+/g, '_')];
   return (
     <div>
-      <Card
-        hoverable
-        style={{ width: 240 }}
-        cover={<img alt="example" src={imageSrc} />}
-      >
-        <Meta title={`[${props.items.booth_id}] - ${props.items.brands}`} description={`[${props.items.booth_id}] - ${props.items.brands}`} />
-      </Card>
+ <Card
+  hoverable
+  style={{ width: 240 }}
+  cover={<img alt="example" src={imageSrc} className="card-image" />}
+>
+  <Meta title={`[${props.items.booth_id}] - ${props.items.brands}`} description={`[${props.items.booth_id}] - ${props.items.brands}`} />
+</Card>
     </div>
   );
 };
