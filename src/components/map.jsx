@@ -94,7 +94,7 @@ export default function Map() {
           </Avatar>
         }
 
-        title="โปรโมชั่น"
+        title="โปรโมชั่น U drink I drive"
         subheader="7-8 ตุลาคม 2566"
       />
       <CardMedia
