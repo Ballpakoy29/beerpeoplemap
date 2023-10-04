@@ -111,7 +111,7 @@ export default function MainPage() {
             return (
           <ThemeProvider theme={defaultTheme}>
              <CssBaseline />
-            <Box  sx={{ position: '', top: 0, zIndex: 999 , }}>
+            <Box  sx={{ position: 'sticky', top: 0, zIndex: 999 , }}>
               <Box >
                   <Tabs
                     value={menu}
