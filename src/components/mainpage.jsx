@@ -166,7 +166,7 @@ export default function MainPage() {
                   <div key={index}
                   style={{ 
                     fontWeight: 500,
-                    fontSize: '1.0rem',
+                    fontSize: '0.8rem',
                     fontFamily: 'Anuphan, sans-serif'  // Set font family for the Card
                   }}
        
