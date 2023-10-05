@@ -47,7 +47,9 @@ export default function Map() {
         }
 
         title="บริการรถรับส่งฟรี MRT สิรินธร - ช่างชุ่ย"
+        titleTypographyProps={{ sx: { fontFamily: 'Anuphan, sans-serif'  } }}  // Set font family for the title
         subheader="7-8 ตุลาคม 2566"
+        subheaderTypographyProps={{ sx: { fontFamily: 'Anuphan, sans-serif' } }}  // Set font family for the subheader
       />
       <CardMedia
         component="img"
@@ -130,7 +132,9 @@ export default function Map() {
         }
 
         title="โปรโมชั่น U drink I drive"
+        titleTypographyProps={{ sx: { fontFamily: 'Anuphan, sans-serif' } }}  // Set font family for the title
         subheader="7-8 ตุลาคม 2566"
+        subheaderTypographyProps={{ sx: { fontFamily: 'Anuphan, sans-serif' } }}
       />
       <CardMedia
         component="img"
