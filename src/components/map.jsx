@@ -59,7 +59,7 @@ export default function Map() {
             <Typography variant="body1" color="text.primary" align="center"  sx={{
                     fontFamily: 'Anuphan, sans-serif',
                     fontWeight: 500,
-                    fontSize: '1.0rem',
+                 fontSize: '0.8rem',
                   }}>
                 บริการรถรับส่งฟรี MRT สิรินธร ทางออก 3A - ช่างชุ่ย ประตู 1
                 
@@ -67,7 +67,7 @@ export default function Map() {
             <Typography variant="body1" color="text.primary" align="center"  sx={{
                     fontFamily: 'Anuphan, sans-serif',
                     fontWeight: 500,
-                    fontSize: '1.0rem',
+                 fontSize: '0.8rem',
                   }}>
                 เวลารับ-ส่ง 13.30 - 22.30 น.
                 
@@ -75,28 +75,28 @@ export default function Map() {
             <Typography variant="body1" color="text.primary" align="center"  sx={{
                     fontFamily: 'Anuphan, sans-serif',
                     fontWeight: 500,
-                    fontSize: '1.0rem',
+                 fontSize: '0.8rem',
                   }}>
                 :
             </Typography>
             <Typography variant="body1" color="text.primary" align="center"  sx={{
                     fontFamily: 'Anuphan, sans-serif',
                     fontWeight: 500,
-                    fontSize: '1.0rem',
+                 fontSize: '0.8rem',
                   }}>
             บริการรถรับส่งฟรี ช่างชุ่ย ประตู 1 - MRT สิรินธร ทางออก 3A
             </Typography>
             <Typography variant="body1" color="text.primary" align="center"  sx={{
                     fontFamily: 'Anuphan, sans-serif',
                     fontWeight: 500,
-                    fontSize: '1.0rem',
+                 fontSize: '0.8rem',
                   }}>
                 เวลารับ-ส่ง 18.00 - 22.30 น.
             </Typography>
             <Typography variant="body1" color="text.primary" align="center"  sx={{
                     fontFamily: 'Anuphan, sans-serif',
                     fontWeight: 500,
-                    fontSize: '1.0rem',
+                 fontSize: '0.8rem',
                   }}>
                 :
             </Typography>
@@ -104,14 +104,14 @@ export default function Map() {
             <Typography variant="body1" color="text.primary" align="center"  sx={{
                     fontFamily: 'Anuphan, sans-serif',
                     fontWeight: 500,
-                    fontSize: '1.0rem',
+                 fontSize: '0.8rem',
                   }}>
             หรือลงสถานีรถไฟฟ้า บางบำหรุ ต่อวินมอไซต์มาเลย
             </Typography>
             <Typography variant="body1" color="text.primary" align="center"  sx={{
                     fontFamily: 'Anuphan, sans-serif',
                     fontWeight: 500,
-                    fontSize: '1.0rem',
+                 fontSize: '0.8rem',
                     
                   }}>
             (อันนี้ไม่ฟรีนะ)
@@ -142,21 +142,21 @@ export default function Map() {
             <Typography variant="body1" color="text.primary" align="center"  sx={{
                     fontFamily: 'Anuphan, sans-serif',
                     fontWeight: 500,
-                    fontSize: '1.0rem',
+                 fontSize: '0.8rem',
                   }}>
             งานนี้รอทุกท่านมาลิ้มลองรสชาติของเบียร์ชนิดต่างๆมากมาย ชิมจนหนำใจไม่ต้องกังวลถ้าขับรถกลับไม่ไหว
             </Typography>
             <Typography variant="body1" color="text.primary" align="center"  sx={{
                     fontFamily: 'Anuphan, sans-serif',
                     fontWeight: 500,
-                    fontSize: '1.0rem',
+                 fontSize: '0.8rem',
                   }}>
             เรามี U drink I drive มาขับแทน พาทุกคนกลับบ้านอย่างปลอดภัย
             </Typography>
             <Typography variant="body1" color="text.primary" align="center"  sx={{
                     fontFamily: 'Anuphan, sans-serif',
                     fontWeight: 500,
-                    fontSize: '1.0rem',
+                 fontSize: '0.8rem',
                   }}>
                 :
             </Typography>
@@ -164,14 +164,14 @@ export default function Map() {
             <Typography variant="body1" color="text.primary" align="center"  sx={{
                     fontFamily: 'Anuphan, sans-serif',
                     fontWeight: 500,
-                    fontSize: '1.0rem',
+                 fontSize: '0.8rem',
                   }}>
             แค่ใส่โค้ด "BEERMARKET" ก็ลดทันทีไปเลย 10% 
             </Typography>           
             <Typography variant="body1" color="text.primary" align="center"  sx={{
                     fontFamily: 'Anuphan, sans-serif',
                     fontWeight: 500,
-                    fontSize: '1.0rem',
+                 fontSize: '0.8rem',
                   }}>
                 :
             </Typography>
@@ -179,14 +179,14 @@ export default function Map() {
             <Typography variant="body1" color="text.primary" align="center"  sx={{
                     fontFamily: 'Anuphan, sans-serif',
                     fontWeight: 500,
-                    fontSize: '1.0rem',
+                 fontSize: '0.8rem',
                   }}>
             เรียกผ่านแอป U drink I drive หรือ โทรเรียกใช้บริการที่ 
             </Typography>
             <Typography variant="body1" color="text.primary" align="center"  sx={{
                     fontFamily: 'Anuphan, sans-serif',
                     fontWeight: 500,
-                    fontSize: '1.0rem',
+                 fontSize: '0.8rem',
                   }}>
             091-0809108 
             </Typography>
