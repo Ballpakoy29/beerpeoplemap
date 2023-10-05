@@ -17,6 +17,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import AirportShuttleIcon from '@mui/icons-material/AirportShuttle';
 import imgCard from './../assets/event.png';
 import imgPromotion from './../assets/promotion2.png';
+import Box from '@mui/material/Box';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -32,12 +33,10 @@ const ExpandMore = styled((props) => {
 export default function Map() {
   const [expanded, setExpanded] = React.useState(false);
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
-
   return (
-   <div>
+ 
+        <Box 
+        >
  <br></br>
      <Card >
       <CardHeader
@@ -57,31 +56,64 @@ export default function Map() {
         alt="Paella dish"
       />
             <CardContent>
-            <Typography variant="body2" color="text.secondary" align="center">
+            <Typography variant="body1" color="text.primary" align="center"  sx={{
+                    fontFamily: 'Anuphan, sans-serif',
+                    fontWeight: 500,
+                    fontSize: '1.0rem',
+                  }}>
                 บริการรถรับส่งฟรี MRT สิรินธร ทางออก 3A - ช่างชุ่ย ประตู 1
                 
             </Typography>
-            <Typography variant="body2" color="text.secondary" align="center">
+            <Typography variant="body1" color="text.primary" align="center"  sx={{
+                    fontFamily: 'Anuphan, sans-serif',
+                    fontWeight: 500,
+                    fontSize: '1.0rem',
+                  }}>
                 เวลารับ-ส่ง 13.30 - 22.30 น.
                 
             </Typography>
-            <Typography variant="body2" color="text.secondary" align="center">
+            <Typography variant="body1" color="text.primary" align="center"  sx={{
+                    fontFamily: 'Anuphan, sans-serif',
+                    fontWeight: 500,
+                    fontSize: '1.0rem',
+                  }}>
                 :
             </Typography>
-            <Typography variant="body2" color="text.secondary" align="center">
+            <Typography variant="body1" color="text.primary" align="center"  sx={{
+                    fontFamily: 'Anuphan, sans-serif',
+                    fontWeight: 500,
+                    fontSize: '1.0rem',
+                  }}>
             บริการรถรับส่งฟรี ช่างชุ่ย ประตู 1 - MRT สิรินธร ทางออก 3A
             </Typography>
-            <Typography variant="body2" color="text.secondary" align="center">
+            <Typography variant="body1" color="text.primary" align="center"  sx={{
+                    fontFamily: 'Anuphan, sans-serif',
+                    fontWeight: 500,
+                    fontSize: '1.0rem',
+                  }}>
                 เวลารับ-ส่ง 18.00 - 22.30 น.
             </Typography>
-            <Typography variant="body2" color="text.secondary" align="center">
+            <Typography variant="body1" color="text.primary" align="center"  sx={{
+                    fontFamily: 'Anuphan, sans-serif',
+                    fontWeight: 500,
+                    fontSize: '1.0rem',
+                  }}>
                 :
             </Typography>
 
-            <Typography variant="body2" color="text.secondary" align="center">
+            <Typography variant="body1" color="text.primary" align="center"  sx={{
+                    fontFamily: 'Anuphan, sans-serif',
+                    fontWeight: 500,
+                    fontSize: '1.0rem',
+                  }}>
             หรือลงสถานีรถไฟฟ้า บางบำหรุ ต่อวินมอไซต์มาเลย
             </Typography>
-            <Typography variant="body2" color="text.secondary" align="center">
+            <Typography variant="body1" color="text.primary" align="center"  sx={{
+                    fontFamily: 'Anuphan, sans-serif',
+                    fontWeight: 500,
+                    fontSize: '1.0rem',
+                    
+                  }}>
             (อันนี้ไม่ฟรีนะ)
             </Typography>
             </CardContent>
@@ -107,19 +139,55 @@ export default function Map() {
         alt="Paella dish"
       />
             <CardContent>
-            <Typography variant="body2" color="text.secondary" align="center">
+            <Typography variant="body1" color="text.primary" align="center"  sx={{
+                    fontFamily: 'Anuphan, sans-serif',
+                    fontWeight: 500,
+                    fontSize: '1.0rem',
+                  }}>
             งานนี้รอทุกท่านมาลิ้มลองรสชาติของเบียร์ชนิดต่างๆมากมาย ชิมจนหนำใจไม่ต้องกังวลถ้าขับรถกลับไม่ไหว
             </Typography>
-            <Typography variant="body2" color="text.secondary" align="center">
+            <Typography variant="body1" color="text.primary" align="center"  sx={{
+                    fontFamily: 'Anuphan, sans-serif',
+                    fontWeight: 500,
+                    fontSize: '1.0rem',
+                  }}>
             เรามี U drink I drive มาขับแทน พาทุกคนกลับบ้านอย่างปลอดภัย
             </Typography>
-            <Typography variant="body2" color="text.secondary" align="center">
+            <Typography variant="body1" color="text.primary" align="center"  sx={{
+                    fontFamily: 'Anuphan, sans-serif',
+                    fontWeight: 500,
+                    fontSize: '1.0rem',
+                  }}>
+                :
+            </Typography>
+
+            <Typography variant="body1" color="text.primary" align="center"  sx={{
+                    fontFamily: 'Anuphan, sans-serif',
+                    fontWeight: 500,
+                    fontSize: '1.0rem',
+                  }}>
             แค่ใส่โค้ด "BEERMARKET" ก็ลดทันทีไปเลย 10% 
             </Typography>           
-            <Typography variant="body2" color="text.secondary" align="center">
+            <Typography variant="body1" color="text.primary" align="center"  sx={{
+                    fontFamily: 'Anuphan, sans-serif',
+                    fontWeight: 500,
+                    fontSize: '1.0rem',
+                  }}>
+                :
+            </Typography>
+
+            <Typography variant="body1" color="text.primary" align="center"  sx={{
+                    fontFamily: 'Anuphan, sans-serif',
+                    fontWeight: 500,
+                    fontSize: '1.0rem',
+                  }}>
             เรียกผ่านแอป U drink I drive หรือ โทรเรียกใช้บริการที่ 
             </Typography>
-            <Typography variant="body2" color="text.secondary" align="center">
+            <Typography variant="body1" color="text.primary" align="center"  sx={{
+                    fontFamily: 'Anuphan, sans-serif',
+                    fontWeight: 500,
+                    fontSize: '1.0rem',
+                  }}>
             091-0809108 
             </Typography>
 
@@ -128,9 +196,8 @@ export default function Map() {
       </CardActions>
     
     </Card>
+    </Box>
 
-   
-   </div>
 
     
   );

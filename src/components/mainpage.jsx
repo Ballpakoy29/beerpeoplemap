@@ -16,7 +16,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import { Select } from 'antd';
-import { DatePicker ,Button, Form, Space} from 'antd';
+import { Form} from 'antd';
 import './mainp.css'
 
 import MapMode from './map';
@@ -29,7 +29,7 @@ import beerBrand from './../data/beer.json';
 import { Tooltip } from 'antd';
 
 import mapAll from './../assets/map_all.png';
-
+import { Button, Modal } from 'antd';
 
 function Copyright(props) {
   return (
@@ -64,6 +64,9 @@ export default function MainPage() {
         const [refreshKey, setRefreshKey] = useState(Date.now() + Math.random());
         const [refreshKey2, setRefreshKey2] = useState(Date.now() + Math.random());
 
+        const [isModalOpen, setIsModalOpen] = useState(false);
+        const [modalContent, setModalContent] = useState(null);
+
         const handleChange = (event, newValue) => {
           //setTxtBrand("");
          // setTxtProvince("");
@@ -71,7 +74,17 @@ export default function MainPage() {
           setSelectBeer(null);
           setSelectSpirit(null);
           setMenu(newValue);
-          brandSelectRef.current.resetFields();
+          brandSelectRef.current.resetFields() ;
+         
+        };
+
+        const showModal = (item) => {
+          setModalContent(item);
+          setIsModalOpen(true);
+        };
+        const handleOk = () => {
+          setModalContent(null);
+          setIsModalOpen(false);
         };
 
         useEffect(()=>{
@@ -109,9 +122,11 @@ export default function MainPage() {
 
 
             return (
+              
           <ThemeProvider theme={defaultTheme}>
              <CssBaseline />
-            <Box  sx={{ position: 'sticky', top: 0, zIndex: 999 , backgroundColor: 'white' }}>
+            <Box  sx={{ position: 'sticky', top: 0, zIndex: 999 , backgroundColor: 'white'
+                }}>
               <Box >
                   <Tabs
                     value={menu}
@@ -137,9 +152,34 @@ export default function MainPage() {
              
                
                 </Box>
-                
+                <Modal
+                 title={` [ ${modalContent?.booth_id} ] - ${modalContent?.brands}`} 
+                 open={isModalOpen} 
+                 onOk={handleOk} 
+                 onCancel={handleOk}
+                 footer={[
+                  <Button key="submit" type="primary" onClick={handleOk}>
+                      OK
+                  </Button>
+              ]}>
+                  {modalContent?.items.map((item, index) => (
+                  <div key={index}
+                  style={{ 
+                    fontWeight: 500,
+                    fontSize: '1.0rem',
+                    fontFamily: 'Anuphan, sans-serif'  // Set font family for the Card
+                  }}
+       
+                >      
+                      <h4>{item.name}</h4>
+                      <p>{item.description}</p>
+                  </div>
+    ))}
+
+              </Modal>
+
                 <Container component="main"  sx={{ height: '80vh'   }}> {/* Set maxWidth to "xs" */}
-                  <Box>
+                  <Box sx={{fontFamily: 'Anuphan, sans-serif'}}>
                     {menu === 1 ?
                               (
                                 <Box sx={{ display: 'flex' ,flexDirection: 'column'   }}>
@@ -194,11 +234,22 @@ export default function MainPage() {
                                     {selectBeer  === null ?   <Box sx={{ p: 1 }}><Image  src={BeerImg} /> </Box> 
                                     :
                                     <Box sx={{ display: 'flex' ,flexDirection: 'column' , gap:5  }}>
-                                    <div key={refreshKey} >
+                                    <div key={refreshKey}  >
+
+
                                     <Box sx={{ display: 'flex', flexDirection: 'row', overflow: 'auto',  gap: 2 }}>                                 
-                                            {selectBeer.map((item) => (
-                                                <Beer key={item.booth_id} items={item} />
-                                            ))}
+                                            {selectBeer.map((item) => 
+                                            
+                                                  item.items.length>0 ? (
+                                                    <div onClick={() => showModal(item)}>                                       
+                                                           <Beer key={item.booth_id} items={item} desc={`กดดูว่า ${item.brands} มีอะไรมาขาย`} />
+                                                    </div>  
+                                                  ) : (
+                                                    <div>                                       
+                                                         <Beer key={item.booth_id} items={item} desc={``} />
+                                                  </div>  
+                                                  )                                                                                          
+                                            )}
                                     </Box>
                                     </div>
                                     <Image  src={mapAll} /> 
@@ -257,7 +308,15 @@ export default function MainPage() {
                                       <div key={refreshKey2} >
                                     <Box sx={{ display: 'flex', flexDirection: 'row', overflow: 'auto' ,  gap: 2 } }>                                       
                                             {selectSpirit.map((item) => (
-                                                <Beer key={item.booth_id} items={item} />
+                                                item.items.length>0 ? (
+                                                  <div onClick={() => showModal(item)}>                                       
+                                                         <Beer key={item.booth_id} items={item} desc={`กดดูว่า ${item.brands} มีอะไรมาขาย`} />
+                                                  </div>  
+                                                ) : (
+                                                  <div>                                       
+                                                       <Beer key={item.booth_id} items={item} desc={``} />
+                                                </div>  
+                                                )             
                                             ))}
                                         
                                     </Box>
@@ -273,6 +332,7 @@ export default function MainPage() {
                                     </Box>
                                 </div>}
                         <Box sx={{ p: 2 }}>
+                        
                       <Copyright></Copyright>
                     </Box>
                   </Box>

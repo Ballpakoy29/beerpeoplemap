@@ -343,15 +343,23 @@ const imageMap = {
 
 const Beer = (props) => {
   const imageSrc = imageMap[props.items.brands.replace(/\s+/g, '_')];
+
+
+
   return (
     <div>
- <Card
-  hoverable
-  style={{ width: 240 }}
-  cover={<img alt="example" src={imageSrc} className="card-image" />}
->
-  <Meta title={`[${props.items.booth_id}] - ${props.items.brands}`} description={`[${props.items.booth_id}] - ${props.items.brands}`} />
-</Card>
+       <Card
+        hoverable
+        style={{ 
+          width: 240,
+          fontWeight: 500,
+          fontSize: '0.9rem',
+          fontFamily: 'Anuphan, sans-serif'  // Set font family for the Card
+        }}
+        cover={<img alt="example" src={imageSrc} className="card-image" />}
+      >
+        <Meta title={`[${props.items.booth_id}] - ${props.items.brands}`} description={ `${props.desc} `} />
+      </Card>
     </div>
   );
 };
