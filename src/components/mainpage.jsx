@@ -192,6 +192,8 @@ export default function MainPage() {
                                   <Form ref={brandSelectRef}>         
                                   <Form.Item name="brand" label=""  >
                                   <Select
+                                   style={{ width: '100%', fontFamily: 'Anuphan, sans-serif' }}  // Set font family for the Select input
+                                   dropdownStyle={{ fontFamily: 'Anuphan, sans-serif' }}  // Set font family for the dropdown items
                                                 size={"large"}
                                                 // showSearch
                                                 allowClear ={true}
