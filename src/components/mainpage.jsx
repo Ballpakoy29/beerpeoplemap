@@ -33,7 +33,11 @@ import { Button, Modal } from 'antd';
 
 function Copyright(props) {
   return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
+    <Typography variant="body2" color="text.secondary" align="center" {...props} sx={{
+      fontFamily: 'Anuphan, sans-serif',
+      fontWeight: 500,
+   fontSize: '0.8rem',
+    }}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
         ประชาชนเบียร์

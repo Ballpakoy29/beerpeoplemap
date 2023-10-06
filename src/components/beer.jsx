@@ -222,8 +222,8 @@ const imageMap = {
   'KWAI_BEER': b2_3,
 
   'SAMATA': b3_1,
-  'THE_BREWING_PROJECT': b3_2,
-  'WIZARD': b3_3,
+  'THE_BREWING_PROJECT': b3_3,
+  'WIZARD': b3_2,
 
   'KHOY_BREWING': b4_1,
   'DADDY_DOG': b4_2,
