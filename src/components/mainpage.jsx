@@ -193,6 +193,7 @@ export default function MainPage() {
                                   <Form.Item name="brand" label=""  >
                                   <Select
                                    style={{ width: '100%', fontFamily: 'Anuphan, sans-serif' }}  // Set font family for the Select input
+                                 //  dropdownClassName="sticky-dropdown"
                                    dropdownStyle={{ fontFamily: 'Anuphan, sans-serif' }}  // Set font family for the dropdown items
                                                 size={"large"}
                                                 // showSearch
@@ -219,7 +220,7 @@ export default function MainPage() {
                                                                        
                                                   }
                                                 }}
-                                                style={{ width: '100%' }}
+                                           
                                                 // filterOption={(input, option) =>
                                                 //   (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
                                                 // }
@@ -268,9 +269,11 @@ export default function MainPage() {
                                   <Form ref={brandSelectRef}>         
                                   <Form.Item name="brand" label=""  >
                                   <Select
+                                    style={{ width: '100%', fontFamily: 'Anuphan, sans-serif' ,  position: 'sticky'  }}  // Set font family for the Select input
+                                    dropdownStyle={{ fontFamily: 'Anuphan, sans-serif' }}  // Set font family for the dropdown items
                                                 size={"large"}
-                                                // showSearch
-                                                 allowClear ={true}
+                                               
+                                                allowClear ={true}
                                                 placeholder="เลือกตามแบรนด์"
                                                 optionFilterProp="children"
                                                 onChange={(value, option) => {
@@ -290,7 +293,7 @@ export default function MainPage() {
                                                     setSelectSpirit(furtherFiltered);                            
                                                   }
                                                 }}
-                                                style={{ width: '100%' }}
+                                           
                                                 // filterOption={(input, option) =>
                                                 //   (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
                                                 // }
