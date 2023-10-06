@@ -194,7 +194,20 @@ export default function Map() {
                   }}>
             091-0809108 
             </Typography>
-
+            <Typography variant="body1" color="text.primary" align="center"  sx={{
+                    fontFamily: 'Anuphan, sans-serif',
+                    fontWeight: 500,
+                 fontSize: '0.8rem',
+                  }}>
+                :
+            </Typography>
+            <Typography variant="body1" color="text.primary" align="center"  sx={{
+                    fontFamily: 'Anuphan, sans-serif',
+                    fontWeight: 500,
+                 fontSize: '0.8rem',
+                  }}>
+                จำกัด 300 สิทธิ์ ไม่รวม ค่ารอ ค่านอกเขต
+            </Typography>
             </CardContent>
       <CardActions disableSpacing>
       </CardActions>
