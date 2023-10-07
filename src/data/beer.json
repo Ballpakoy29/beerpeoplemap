@@ -535,7 +535,25 @@
         },
         {
         "booth_id": "B21",
-        "brands": "HAPLAB","items": []
+        "brands": "HAPLAB",
+        "items": [
+            {
+                "name": "Ferris Wit",
+                "description": "Style American Wit ADD Lemon, Juniper wit ดื่มง่ายๆราวกับนั่งชิงช้าสวรรค์  เพียง 5%0 Abv"
+            },
+            {
+                "name": "Man in the tinder",
+                "description": "Style Pseudo Lagerด้วย concept เบียร์ที่ที่เรียบง่ายตามสไตล์การหาความรักผ่านเว็บหาคู่ ใช้แค่ 1 malt1 hops Red X m Malt X Mittelfruh hops "
+            },
+            {
+                "name": "Witch Bitches",
+                "description": "Style: imperial Stout เป็นเบียร์ที่ใส่ blackberry กับ cacaonibs ที่ทำกับโรงเบียร์ Underdog ความหนักหน่วง อยู่ที่ 8.3%"
+            },
+            {
+                "name": "Chromazone of Sorachi Ace",
+                "description": "Style Pale ale เป็นเบียร์ที่โชว์ความ hops  ของ sorachi ace ที่มีรสชาติของเลมอน, ส้ม ที่ชัดเจน 5.6% abv "
+            }
+        ]
         },
         {
         "booth_id": "B21",
